@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
+  "homepage": "https://Madhava-IT-Solutions.github.io/gpvmittasks",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -16,4 +17,3 @@
     "mysql2": "^3.12.0"
   }
 }
-"homepage": "https://Madhava-IT-Solutions.github.io/gpvmittasks"
