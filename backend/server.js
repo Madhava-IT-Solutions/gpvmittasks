@@ -52,4 +52,8 @@ app.get('/details/:name_of_work?', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  const host = process.env.RENDER_EXTERNAL_HOSTNAME || 'localhost';
+  console.log(`Server running on http://${host}:${PORT}`);
+});
+
