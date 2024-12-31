@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <link rel="stylesheet" href="index.css"/>
+
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <form>
+        <div class="inputbox">
+            <label for="user">Username</label>
+            <input id="user" type="text" placeholder="Username" />
+        </div>
+        <div class="inputbox">
+            <label for="user">Password</label>
+            <input id="password" type="text" placeholder="Password" />
+        </div>
+    </form>
+    <div class="captchaBox">
+        <h3>captcha</h3>
+        <button onclick="generateCaptcha()">captcha</button>
+        <p id='captcha'></p>
+        <input id="captchaInp" />
+        <div>
+            <button type="submit" id="loginbutton">login</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script src = "index.js" ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilometer Converter</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/b3adabdb62.js" crossorigin="anonymous"></script>
+
+</head>
+<body>  
+    <div class="container">
+        <h1 style="color:rgb(189, 188, 185); font-size: 3\50px;"><span  style="color:#a90000;" >Units</span> <span style="color:gold;" >Converter </span> <i class="fa-solid fa-calculator"></i></h1>
+        
+        <div id = "section1">
+        <ul  class="section1">
+            <div class="cl">
+                <li class="option" value="length"><button class="button" onclick=showSection("length") >Length <i class="fa-solid fa-arrows-left-right"></i></button></li>
+                <li class="option" value="area"><button onclick=showSection("area") >Area <i class="fa-solid fa-chart-area"></i></button></li>
+                <li class="option" value="weight"><button onclick=showSection('weight')>Weight <i class="fa-solid fa-scale-balanced"></i></button></li>
+                <li class="option" value="volume"><button onclick=showSection('volume')>Volume <i class="fa-solid fa-weight-hanging"></i></button></li>
+                <li class="option" value="length"><button onclick=showSection("energy") >Energy <i class="fa-solid fa-bolt-lightning"></i></button></li>
+                </div>
+            <div class="cl">
+                <li class="option" value="area"><button onclick=showSection("speed") >Speed <i class="fa-solid fa-person-biking"></i></button></li>
+                <li class="option" value="weight"><button onclick=showSection('power')>Power <i class="fa-solid fa-house-fire"></i></button></li>
+                <li class="option" value="volume"><button onclick=showSection('pressure')>Pressure <i class="fa-solid fa-land-mine-on"></i></button></li>
+                <li class="option" value="length"><button onclick=showSection("time") >Time <i class="fa-solid fa-hourglass-half"></i></button></li>
+                <li class="option" value="area"><button onclick=showSection("volumeliquids) >Volume(Liquids) <i class="fa-solid fa-flask"></i></button></li>
+                </div>
+            <div class="cl"><li class="option" value="weight"><button onclick=showSection('frequency')>Frequency <i class="fa-solid fa-tower-broadcast"></i></button></li>
+                <li class="option" value="volume"><button onclick=showSection('force')>Force <i class="fa-solid fa-truck"></i></button></li>
+                <li class="option" value="length"><button onclick=showSection("dataStorage") >Data Storage <i class="fa-regular fa-floppy-disk"></i></button></li>
+                <li class="option" value="area"><button onclick=showSection("density") >Density <i class="fa-solid fa-glass-water-droplet"></i></button></li>
+                <li class="option" value="weight"><button onclick=showSection('angle')>Angle <i class="fa-brands fa-laravel"></i></button></li>
+            </div>
+        </ul>
+        <p style="color: rgb(91, 16, 16);font-size:16px; margin-left: 30px;">This free conversion calculator converts between common units of length, area, volume, weight, time ... </p>
+    </div>
+        
+
+    <div id = "length" class=" section ">
+                <p>From</p>
+                <div class="row">
+                <input type="number" id="input1" placeholder="Enter your value" oninput="convertLength()" min="0" max="1000000" step="10" />
+                <select id="unitSelect1" class="f1" onchange="convertLength()">
+                    <option class="option" value="kilometers">Kilometer (km)</option>
+                    <option class="option" value="meters">Meter (m)</option>
+                    <option class="option" value="centimeters">Centimeter (cm)</option>
+                    <option class="option" value="millimeters">Millimeter (mm)</option>
+                    <option class="option" value="miles">Mile (mi)</option>
+                    <option class="option" value="yards">Yard (yd)</option>
+                    <option class="option" value="feet">Foot (ft)</option>
+                    <option class="option" value="inches">Inch (in)</option>
+                </select>
+                </div>
+                <p>To</p>
+                <div class="row">
+                <input type="text" id="result1" class="" placeholder="Output" />
+                <select id="unitSelect2" onchange="convertLength()">
+                    <option class="option" value="miles">Mile (mi)</option>
+                    <option class="option" value="yards">Yard (yd)</option>
+                    <option class="option" value="feet">Foot (ft)</option>
+                    <option class="option" value="inches">Inch (in)</option>
+                    <option class="option" value="kilometers">Kilometer (km)</option>
+                    <option class="option" value="meters">Meter (m)</option>
+                    <option class="option" value="centimeters">Centimeter (cm)</option>
+                    <option class="option" value="millimeters">Millimeter (mm)</option>
+                </select>
+             </div>
+            <div id="result"></div>
+            <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+    </div>
+        
+    <div id = "weight" class=" section  ">
+        <p for="weight2" >From</p>
+        <div class="row">
+            <input type="number" id="inputw" placeholder="Enter your value" oninput="convertWeight()" min="0" max="1000000" step="10" />
+            <select id="weight1" onchange="convertWeight()">
+                <option class="option" value="kilogram">Kilogram (kg)</option>
+                <option class="option" value="gram">Gram (g)</option>
+                <option class="option" value="milligram">Milligram (mg)</option>
+                <option class="option" value="metricTon">Metric Ton (t)</option>
+                <option class="option" value="pound">Pound (lb)</option>
+                <option class="option" value="ounce">Ounce (oz)</option>
+                <option class="option" value="kiloton">Kiloton (kt)</option>
+                <option class="option" value="megaton">Megaton (Mt)</option>
+            </select>
+        </div>
+        <p for="weight2" >To</p>
+        <div class="row">
+            <input type="number" id="resultWeight" class="" placeholder="Output" />
+            <select id="weight2" onchange="convertWeight()">
+                <option class="option" value="gram">Gram (g)</option>
+                <option class="option" value="kilogram">Kilogram (kg)</option>
+                <option class="option" value="milligram">Milligram (mg)</option>
+                <option class="option" value="metricTon">Metric Ton (t)</option>
+                <option class="option" value="pound">Pound (lb)</option>
+                <option class="option" value="ounce">Ounce (oz)</option>
+                <option class="option" value="kiloton">Kiloton (kt)</option>
+                <option class="option" value="megaton">Megaton (Mt)</option>
+            </select>
+        </div>
+        <div id="resultWeight2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+        
+    </div>
+
+    <div id = "area" class=" section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputa" placeholder="Enter your value" oninput="convertArea()" min="0" max="1000000" step="10" />
+            <select id="area1" class="f1" value="squarekilometer" onchange="convertArea()">
+                <option class="option" value="squarekilometer">Square Kilometer (km²)</option>
+                <option class="option" value="squaremeter">Square Meter (m²)</option>
+                <option class="option" value="squarecentimeter">Square Centimeter (cm²)</option>
+                <option class="option" value="squaremillimeter">Square Millimeter (mm²)</option>
+                <option class="option" value="hectare">Hectare (ha)</option>
+                <option class="option" value="acre">Acre (ac)</option>
+                <option class="option" value="cent">Cent (ct)</option>
+                <option class="option" value="squaremile">Square Mile (mi²)</option>
+                <option class="option" value="squareyard">Square Yard (yd²)</option>
+                <option class="option" value="squarefeet">Square Foot (ft²)</option>
+                <option class="option" value="squareinch">Square Inch (in²)</option>
+            </select>
+        </div>
+
+            <p>To</p>
+        <div class="row">
+            <input type="number" id="resultArea" class="" placeholder="Output" />
+            <select id="area2" onchange="convertArea()">
+                <option class="option" value="hectare">Hectare (ha)</option>
+                <option class="option" value="acre">Acre (ac)</option>
+                <option class="option" value="cent">Cent (ct)</option>
+                <option class="option" value="squaremile">Square Mile (mi²)</option>
+                <option class="option" value="squareyard">Square Yard (yd²)</option>
+                <option class="option" value="squarefeet">Square Foot (ft²)</option>
+                <option class="option" value="squareinch">Square Inch (in²)</option>
+                <option class="option" value="squarekilometer">Square Kilometer (km²)</option>
+                <option class="option" value="squaremeter">Square Meter (m²)</option>
+                <option class="option" value="squarecentimeter">Square Centimeter (cm²)</option>
+                <option class="option" value="squaremillimeter">Square Millimeter (mm²)</option>
+            </select>
+        </div>
+   
+        <div id="resultArea2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    
+    </div>
+
+    <div id = "volume" class=" section ">
+        <p>From</p>
+        <div class="row">
+        <input type="number" id="inputv" placeholder="Enter your value" oninput="convertVolume()" min="0" max="1000000" step="10" />
+        <select id="volume1" class="f1" onchange="convertVolume()">
+            <option class="option" value="cubicmeter">Cubic Meters (m³)</option>
+            <option class="option" value="cubiccentimeter">Cubic Centimeters (cm³)</option>
+            <option class="option" value="cubicmillimeter">Cubic Millimeters (mm³)</option>
+            <option class="option" value="cubicyard">Cubic Yards (yd³)</option>
+            <option class="option" value="cubicfeet">Cubic Feet (ft³)</option>
+            <option class="option" value="cubicinch">Cubic Inches (in³)</option>
+            <option class="option" value="cubickilometer">Cubic Kilometers (km³)</option>
+            <option class="option" value="cubicmile">Cubic Miles (mi³) </option>
+        </select>
+        </div>
+            <p>To</p>
+        <div class="row">
+            <input type="" id="resultVolume" class="" placeholder="Output" />
+            <select id="volume2" onchange="convertVolume()">
+                <option value="cubiccentimeter">Cubic Centimeters (cm³)</option>
+                <option value="cubicmillimeter">Cubic Millimeters (mm³)</option>
+                <option value="cubicfeet">Cubic Feet (ft³)</option>
+                <option value="cubicinch">Cubic Inches (in³)</option>
+                <option value="cubicmile">Cubic Miles (mi³)</option>
+                <option value="cubicyard">Cubic Yards (yd³)</option>
+                <option value="cubickilometer">Cubic Kilometers (km³)</option>
+                <option value="cubicmeter">Cubic Meters (m³)</option>
+            </select>
+        </div>
+            <div id="resultVolume2"></div>
+            <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+    </div>
+
+    <div id = "energy" class=" section  ">
+        <p>From</p>
+        <div class="row">
+        <input type="number" id="inpute" placeholder="Enter your value" oninput="convertEnergy()" min="0" max="1000000" step="10" />
+        <select id="energy1" onchange="convertEnergy()">
+            <option value="joule">Joule (J)</option>
+            <option value="calorie">Calorie (cal)</option>
+            <option value="kilocalorie"> Kilocalorie (kcal)</option>
+            <option value="kilowatthour">Kilowatt-hour (kWh)</option>
+            <option value="electronvolt">Electronvolt (eV)</option>
+            <option value="btu">British Thermal Unit (BTU)</option>
+            <option value="erg">Erg (erg)</option>
+            <option value="therm">Therm </option>
+            <option value="footpound">Foot-pound (ft·lb)</option>
+            <option value="tnt">Ton of TNT</option>
+            <option value="hartree">Hartree (Eh)</option>
+        </select>
+    </div>
+                <p>To</p>
+        <div class="row"> 
+            <input type="number" id="resultEnergy" class="" placeholder="Output" />     
+            <select id="energy2" onchange="convertEnergy()">
+                <option value="calorie">Calorie (cal)</option>
+                <option value="joule">Joule (J)</option>
+                <option value="kilocalorie"> Kilocalorie (kcal)</option>
+                <option value="kilowatthour">Kilowatt-hour (kWh)</option>
+                <option value="electronvolt">Electronvolt (eV)</option>
+                <option value="btu">British Thermal Unit (BTU)</option>
+                <option value="erg">Erg  (erg)</option>
+                <option value="therm">Therm </option>
+                <option value="footpound">Foot-pound (ft·lb)</option>
+                <option value="tnt">Ton of TNT</option>
+                <option value="hartree">Hartree (Eh)</option>
+            </select>
+     </div>
+        <div id="resultEnergy2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "speed" class=" section  ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputs" placeholder="Enter your value" oninput="convertSpeed()" min="0" max="1000000" step="10" />
+            <select id="speed1" value="kilometer per hour" onchange="convertSpeed()">
+                <option value="kilometer per hour">Kilometer per hour</option>
+                <option value="meter per second">Meter per second</option>
+                <option value="mile per hour">Miles per hour</option>
+                <option value="knot">Knot</option>
+                <option value="foot per second">Foot per second</option>
+                <option value="mach">Mach</option>
+                <option value="centimeter per second">Centimeter per second</option>            
+                <option value="inch per second">Inch per second</option>
+                <option value="light speed">Light speed</option>
+            </select>
+        </div>
+        <p>To</p>
+        <div class="row">
+            <input type="number" id="resultSpeed" class="" placeholder="Output" />
+            <select id="speed2" value="meter per second" onchange="convertSpeed()">
+                <option value="meter per second">Meter per second</option>
+                <option value="mile per hour">Miles per hour</option>
+                <option value="knot">Knot</option>
+                <option value="foot per second">Foot per second</option>
+                <option value="mach">Mach</option>
+                <option value="centimeter per second">Centimeter per second</option>
+                <option value="inch per second">Inch per second</option>
+                <option value="light speed">Light speed</option>
+                <option value="kilometer per hour">Kilometer per hour</option>
+            </select>
+        </div>
+        <div id="resultSpeed2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "power" class=" section  ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputpower" placeholder="Enter your value" oninput="convertPower()" min="0" max="1000000" step="10" />
+            <select id="power1" value="watt" onchange="convertPower()">
+                <option value="kilowatt">Kilowatt (kW)</option>
+                <option value="watt">Watt (W)</option>
+                <option value="megawatt">Megawatt (MW)</option>
+                <option value="gigawatt">Gigawatt (GW)</option>
+                <option value="horsepower (mechanical)">Horsepower (Mechanical)</option>
+                <option value="horsepower (metric)">Horsepower (Metric)</option>
+                <option value="kilocalories per hour">Kilocalories per hour (kcal/h)</option>            
+                <option value="british thermal units per hour">British Thermal Units per hour (BTU/h)</option>
+                <option value="erg per second">Erg per second</option>
+                <option value="ton of refrigeration">Ton of refrigeration (TR)</option>
+                <option value="decibel-milliwatts">Decibel-milliwatts (dBm)</option>
+            </select>
+        </div>
+        <p>To</p>
+
+        <div class="row">
+            <input type="number" id="resultPower" class="" placeholder="Output" />
+            <select id="power2" value="meter per second" onchange="convertPower()">
+                <option value="watt">Watt (W)</option>
+                <option value="kilowatt">Kilowatt (kW)</option>
+                <option value="megawatt">Megawatt (MW)</option>
+                <option value="gigawatt">Gigawatt (GW)</option>
+                <option value="horsepower (mechanical)">Horsepower (Mechanical)</option>
+                <option value="horsepower (metric)">Horsepower (Metric)</option>
+                <option value="kilocalories per hour">Kilocalories per hour (kcal/h)</option>            
+                <option value="british thermal units per hour">British Thermal Units per hour (BTU/h)</option>
+                <option value="erg per second">Erg per second</option>
+                <option value="ton of refrigeration">Ton of refrigeration (TR)</option>
+                <option value="decibel-milliwatts">Decibel-milliwatts (dBm)</option>
+            </select>
+            </div>
+        <div id="resultPower2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "pressure" class=" section  ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputpressure" placeholder="Enter your value" oninput="convertPressure()" min="0" max="1000000" step="10" />
+            <select id="pressure1" value="watt" onchange="convertPressure()">
+                <option value="Kilopascal">Kilopascal (kPa)</option>
+                <option value="Pascal">Pascal (Pa)</option>
+                <option value="Megapascal">Megapascal (MPa)</option>
+                <option value="Bar">Bar</option>
+                <option value="Millibar">Millibar (mbar)</option>
+                <option value="Atmosphere">Atmosphere (atm)</option>
+                <option value="Torr">Torr</option>            
+                <option value="Pounds per square inch">Pounds per square inch (psi)</option>
+                <option value="Inches of Mercury">Inches of Mercury (inHg)</option>
+                <option value="Millimeters of Mercury">Millimeters of Mercury (mmHg)</option>
+                <option value="Newton per square meter">Newton per square meter (N/m²)</option>
+            </select>
+        </div>
+                <p>To</p>
+                <div class="row">
+                    <input type="number" id="resultPressure" class="" placeholder="Output" />
+                    <select id="pressure2" value="meter per second" onchange="convertPressure()">
+                        <option value="Pascal">Pascal (Pa)</option>
+                        <option value="Kilopascal">Kilopascal (kPa)</option>
+                        <option value="Megapascal">Megapascal (MPa)</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Millibar">Millibar (mbar)</option>
+                        <option value="Atmosphere">Atmosphere (atm)</option>
+                        <option value="Torr">Torr</option>            
+                        <option value="Pounds per square inch">Pounds per square inch (psi)</option>
+                        <option value="Inches of Mercury">Inches of Mercury (inHg)</option>
+                        <option value="Millimeters of Mercury">Millimeters of Mercury (mmHg)</option>
+                        <option value="Newton per square meter">Newton per square meter (N/m²)</option>
+                    </select>
+                </div>
+            <div id="resultPressure2"></div>
+            <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+        </div>
+
+    <div id = "time" class="section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputTime" placeholder="Enter your value" oninput="convertTime()" min="0" max="1000000" step="10" />
+            <select id="time1" value="Second" onchange="convertTime()">
+                <option value="Minute">Minute</option>
+                <option value="Second">Second</option>
+                <option value="Millisecond">Millisecond</option>
+                <option value="Microsecond">Microsecond</option>
+                <option value="Nanosecond">Nanosecond</option>
+                <option value="Picosecond">Picosecond</option>
+                <option value="Hour">Hour</option>            
+                <option value="Day">Day</option>
+                <option value="Week">Week</option>
+                <option value="Month">Month</option>
+                <option value="Year">Year</option>
+                <option value="Decade">Decade</option>
+                <option value="Century">Century</option>
+                <option value="Millennium">Millennium</option>
+            </select>
+        </div>
+        <p>To</p>
+
+        <div class="row">
+            <input type="number" id="resultTime" class="" placeholder="Output" />
+            <select id="time2" value="meter per second" onchange="convertTime()">
+                <option value="Second">Second</option>
+                <option value="Millisecond">Millisecond</option>
+                <option value="Microsecond">Microsecond</option>
+                <option value="Nanosecond">Nanosecond</option>
+                <option value="Picosecond">Picosecond</option>
+                <option value="Minute">Minute</option>
+                <option value="Hour">Hour</option>            
+                <option value="Day">Day</option>
+                <option value="Week">Week</option>
+                <option value="Month">Month</option>
+                <option value="Year">Year</option>
+                <option value="Decade">Decade</option>
+                <option value="Century">Century</option>
+                <option value="Millennium">Millennium</option>
+            </select> 
+        </div>
+        <div id="resultTime2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "volumeliquids" class="section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputvl" placeholder="Enter your value" oninput="convertvolumeliquids()" min="0" max="1000000" step="10" />
+            <select id="vl1" value="Second" onchange="convertvolumeliquids()">
+                <option value="Liter">Liter (L)</option>
+                <option value="Milliliter">Milliliter (mL)</option>
+                <option value="Cubic Meter">Cubic Meter (m³)</option>
+                <option value="Cubic Centimeter">Cubic Centimeter (cm³)</option>
+                <option value="Cubic Decimeter">Cubic Decimeter (dm³)</option>
+                <option value="Gallon (US)">Gallon (US)</option>
+                <option value="Gallon (UK)">Gallon (UK)</option>            
+                <option value="Quart (US)">Quart (US)</option>
+                <option value="Pint (US)">Pint (US)</option>
+                <option value="Pint (UK)">Pint (UK)</option>
+                <option value="Fluid Ounce (US)">Fluid Ounce (US)</option>
+                <option value="Fluid Ounce (UK)">Fluid Ounce (UK)</option>
+                <option value="Barrel (Oil)">Barrel (Oil)</option>
+                <option value="Cup (US)">Cup (US)</option>
+                <option value="Cup (Metric)">Cup (Metric)</option>
+            </select>
+        </div>
+        <p>To</p>
+        <div class="row">
+            <input type="number" id="resultvl" class="" placeholder="Output" />
+            <select id="vl2" value="meter per second" onchange="convertvolumeliquids()">
+                <option value="Milliliter">Milliliter (mL)</option>
+                <option value="Liter">Liter (L)</option>
+                <option value="Cubic Meter">Cubic Meter (m³)</option>
+                <option value="Cubic Centimeter">Cubic Centimeter (cm³)</option>
+                <option value="Cubic Decimeter">Cubic Decimeter (dm³)</option>
+                <option value="Gallon (US)">Gallon (US)</option>
+                <option value="Gallon (UK)">Gallon (UK)</option>            
+                <option value="Quart (US)">Quart (US)</option>
+                <option value="Pint (US)">Pint (US)</option>
+                <option value="Pint (UK)">Pint (UK)</option>
+                <option value="Fluid Ounce (US)">Fluid Ounce (US)</option>
+                <option value="Fluid Ounce (UK)">Fluid Ounce (UK)</option>
+                <option value="Barrel (Oil)">Barrel (Oil)</option>
+                <option value="Cup (US)">Cup (US)</option>
+                <option value="Cup (Metric)">Cup (Metric)</option>
+            </select>
+        </div>
+        <div id="resultvl2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "frequency" class="section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputFrequency" placeholder="Enter your value" oninput="convertFrequency()" min="0" max="1000000" step="10" />
+            <select id="frequency1" value="Second" onchange="convertFrequency()">
+                <option value="Hertz">Hertz (Hz)</option>
+                <option value="Kilohertz">Kilohertz (kHz)</option>
+                <option value="Megahertz">Megahertz (MHz)</option>
+                <option value="Gigahertz">Gigahertz (GHz)</option>
+                <option value="Terahertz">Terahertz (THz)</option>
+                <option value="Kilocycles">Kilocycles (kc)</option>
+                <option value="Megacycles">Megacycles (Mc)</option>            
+                <option value="Revolutions per minute">Revolutions per minute (RPM)</option>
+                <option value="Cycles per second">Cycles per second (cps)</option>
+            </select>
+     </div>
+        <p>To</p>
+        <div class="row">
+            <input type="number" id="resultFrequency" class="" placeholder="Output" />
+            <select id="frequency2" value="meter per second" onchange="convertFrequency()">
+                <option value="Hertz">Hertz (Hz)</option>
+                <option value="Kilohertz">Kilohertz (kHz)</option>
+                <option value="Megahertz">Megahertz (MHz)</option>
+                <option value="Gigahertz">Gigahertz (GHz)</option>
+                <option value="Terahertz">Terahertz (THz)</option>
+                <option value="Kilocycles">Kilocycles (kc)</option>
+                <option value="Megacycles">Megacycles (Mc)</option>            
+                <option value="Revolutions per minute">Revolutions per minute (RPM)</option>
+                <option value="Cycles per second">Cycles per second (cps)</option>
+            </select>
+        </div>
+       <div id="resultFrequency2"></div>
+       <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "force" class="section ">
+        <p>From</p>
+        <div class="row">
+        <input type="number" id="inputForce" placeholder="Enter your value" oninput="convertForce()" min="0" max="1000000" step="10" />
+        <select id="force1" value="Second" onchange="convertForce()">
+            <option value="Kilonewton">Kilonewton (kN)</option>
+            <option value="Newton">Newton (N)</option>
+            <option value="Dyne">Dyne</option>
+            <option value="Kilogram-force">Kilogram-force (kgf)</option>
+            <option value="Pound-force">Pound-force (lbf)</option>
+            <option value="Ounce-force">Ounce-force (ozf)</option>            
+            <option value="Ton-force (metric)">Ton-force (metric)</option>
+            <option value="Ton-force (US)">Ton-force (US)</option>
+            <option value="Poundal">Poundal</option>            
+            <option value="Sthène">Sthène</option>
+            <option value="Grave-force">Grave-force (gf)</option>
+        </select>
+        </div>
+        <p>To</p>
+        <div class="row">
+            <input type="number" id="resultForce" class="" placeholder="Output" />
+            <select id="force2" value="meter per second" onchange="convertForce()">
+                <option value="Newton">Newton (N)</option>
+                <option value="Kilonewton">Kilonewton (kN)</option>
+                <option value="Dyne">Dyne</option>
+                <option value="Kilogram-force">Kilogram-force (kgf)</option>
+                <option value="Pound-force">Pound-force (lbf)</option>
+                <option value="Ounce-force">Ounce-force (ozf)</option>            
+                <option value="Ton-force (metric)">Ton-force (metric)</option>
+                <option value="Ton-force (US)">Ton-force (US)</option>
+                <option value="Poundal">Poundal</option>            
+                <option value="Sthène">Sthène</option>
+                <option value="Grave-force">Grave-force (gf)</option>
+            </select>
+        </div>
+        <div id="resultForce2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "dataStorage" class="section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputData" placeholder="Enter your value" oninput="convertData()" min="0" max="1000000" step="10" />
+            <select id="data1" value="Second" onchange="convertData()">
+                <option value="Byte">Byte</option>
+                <option value="Bit">Bit</option>
+                <option value="Kilobyte">Kilobyte (KB)</option>
+                <option value="Megabyte">Megabyte (MB)</option>
+                <option value="Gigabyte">Gigabyte (GB)</option>
+                <option value="Terabyte">Terabyte (TB)</option>
+                <option value="Petabyte">Petabyte (PB)</option>            
+                <option value="Exabyte">Exabyte (EB)</option>
+                <option value="Zettabyte">Zettabyte (ZB)</option>
+                <option value="Yottabyte">Yottabyte (YB)</option>            
+                <option value="Kilobit">Kilobit (Kb)</option>
+                <option value="Megabit">Megabit (Mb)</option>
+                <option value="Gigabit">Gigabit (Gb)</option>
+            </select>
+        </div>
+        <p>To</p>
+        <div class="row">
+            <input type="number" id="resultData" class="" placeholder="Output" />
+            <select id="data2" value="meter per second" onchange="convertData()">
+                <option value="Bit">Bit</option>
+                <option value="Byte">Byte</option>
+                <option value="Kilobyte">Kilobyte (KB)</option>
+                <option value="Megabyte">Megabyte (MB)</option>
+                <option value="Gigabyte">Gigabyte (GB)</option>
+                <option value="Terabyte">Terabyte (TB)</option>
+                <option value="Petabyte">Petabyte (PB)</option>            
+                <option value="Exabyte">Exabyte (EB)</option>
+                <option value="Zettabyte">Zettabyte (ZB)</option>
+                <option value="Yottabyte">Yottabyte (YB)</option>            
+                <option value="Kilobit">Kilobit (Kb)</option>
+                <option value="Megabit">Megabit (Mb)</option>
+                <option value="Gigabit">Gigabit (Gb)</option>
+            </select>
+        </div>
+        <div id="resultData2"></div>
+        <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "density" class="section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputDensity" placeholder="Enter your value" oninput="convertDensity()" min="0" max="1000000" step="10" />
+            <select id="density1" value="Second" onchange="convertDensity()">
+                <option value="Kilogram per cubic meter">Kilogram per Cubic Meter (kg/m³)</option>
+                <option value="Gram per cubic centimeter">Gram per Cubic Centimeter (g/cm³)</option>
+                <option value="Gram per liter">Gram per Liter (g/L)</option>
+                <option value="Pound per cubic inch">Pound per Cubic Inch (lb/in³)</option>
+                <option value="Pound per cubic foot">Pound per Cubic Foot (lb/ft³)</option>
+                <option value="Ounce per cubic inch">Ounce per Cubic Inch (oz/in³)</option>
+                <option value="Ton per cubic yard">Ton per Cubic Yard (ton/yd³)</option>            
+                <option value="Kilogram per liter">Kilogram per Liter (kg/L)</option>
+                <option value="Milligram per liter">Milligram per Liter (mg/L)</option>
+                <option value="Carat per milliliter">Carat per Milliliter (ct/mL)</option>
+            </select>
+        </div>
+                <p>To</p>
+        <div class="row">
+            <input type="number" id="resultDensity" class="" placeholder="Output" />
+            <select id="density2" value="meter per second" onchange="convertDensity()">
+                <option value="Gram per cubic centimeter">Gram per Cubic Centimeter (g/cm³)</option>
+                <option value="Kilogram per cubic meter">Kilogram per Cubic Meter (kg/m³)</option>
+                <option value="Gram per liter">Gram per Liter (g/L)</option>
+                <option value="Pound per cubic inch">Pound per Cubic Inch (lb/in³)</option>
+                <option value="Pound per cubic foot">Pound per Cubic Foot (lb/ft³)</option>
+                <option value="Ounce per cubic inch">Ounce per Cubic Inch (oz/in³)</option>
+                <option value="Ton per cubic yard">Ton per Cubic Yard (ton/yd³)</option>            
+                <option value="Kilogram per liter">Kilogram per Liter (kg/L)</option>
+                <option value="Milligram per liter">Milligram per Liter (mg/L)</option>
+                <option value="Carat per milliliter">Carat per Milliliter (ct/mL)</option>
+            </select>
+        </div>
+            <div id="resultDensity2"></div>
+            <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+
+    </div>
+
+    <div id = "angle" class="section ">
+        <p>From</p>
+        <div class="row">
+            <input type="number" id="inputAngle" placeholder="Enter your value" oninput="convertAngle()" min="0" max="1000000" step="10" />
+            <select id="angle1" value="Second" onchange="convertAngle()">
+                <option value="Radian">Radian</option>
+                <option value="Degree">Degree</option>
+                <option value="Gradian">Gradian</option>
+                <option value="Minute of arc">Minute of arc</option>
+                <option value="Second of arc">Second of arc</option>
+                <option value="Circle">Circle</option>
+                <option value="Turn">Turn</option>            
+            </select>
+        </div>
+        <p>To</p>
+        <div class="row">
+            <input type="number" id="resultAngle" class="" placeholder="Output" />
+            <select id="angle2" value="meter per second" onchange="convertAngle()">
+                <option value="Degree">Degree</option>
+                <option value="Radian">Radian</option>
+                <option value="Gradian">Gradian</option>
+                <option value="Minute of arc">Minute of arc</option>
+                <option value="Second of arc">Second of arc</option>
+                <option value="Circle">Circle</option>
+                <option value="Turn">Turn</option>            
+            </select>
+        </div>
+            <div id="resultAngle2"></div>
+            <button class="back" onclick=back()><i class="fa-solid fa-arrow-left"></i></button>
+    </div>
+</div>
+ <script src="index.js"></script>
+</body>
+</html>

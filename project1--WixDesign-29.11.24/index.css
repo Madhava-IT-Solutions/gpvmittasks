@@ -1,0 +1,805 @@
+body{
+    scrollbar-color: yellow;
+    background-color: rgb(55, 109, 130);
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation-name: a;  
+    transition: 2s; 
+}
+@keyframes a{
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+       }
+       to {
+        opacity: 1;
+        transform: translate(0px);
+       }
+  }
+.h-ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:80%;
+    padding: 0%;
+}
+.h-ul a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+.h-ul :hover a{
+    color:yellow;
+}
+
+.upper{
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    width: 70%;
+    padding-top: 20px;
+    padding-left: 10%;
+    background-color: #225b6e;
+    height: 100vh;
+    color: white;
+}
+.left h2{
+    color: yellow;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.innerbox{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.innerbox h1{
+    color: yellow;
+    margin-bottom: 10vh;
+    font-size: 30px;
+}
+.innerbox h1{
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+@keyframes example {
+    0%   {left:60vw; top:0px;}
+    25%  {left:10px; top:0px;}
+    50%  {left:10px; top:10px;}
+    75%  {left:0px; top:10px;}
+    100% {left:0px; top:0px;}
+  }
+.innerbox h1 span{
+    transition: 1s;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: prime;
+}
+.innerbox:hover h1 span{
+    transition: 1s;
+    font-size: 90px;
+}
+.right{
+    transition: 2s;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 0px;
+    background-image: url(https://raw.githubusercontent.com/sushmithaadapa12/MGM_shareef/refs/heads/master/profile.png);
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size:30% 100%;
+    width: 30%;  
+}
+
+
+@media screen and (max-width:768px) and (min-width:426px) {
+    .upper{
+        min-height: 100vh;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+    .left{
+        height: 60%;
+        width: 100%;
+        order: 1;
+    }
+    .innerbox h1 span{
+      transition: 1s;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: prime;
+      margin-bottom: 200px;
+  }
+  .innerbox:hover h1 span{
+      transition: 1s;
+      font-size: 50px;
+      margin-bottom: 0px;
+  }
+    .right{
+       transition: 1s;
+        height: 50vh;
+        z-index: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        right: 0px;
+        background-image: url(https://raw.githubusercontent.com/sushmithaadapa12/MGM_shareef/refs/heads/master/profile.png);
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        width: 100%;  
+    }
+    
+}
+
+
+.about{
+    transition: 2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    height: 100vh;
+    width: 100%;
+    padding: 10%;
+    font-size: 20px;
+    text-align: center;
+    color: #b0edf5;
+    background-image: linear-gradient(to right , #225b6e, grey);
+}
+
+@media screen and (max-width:768px) and (min-width:426px) {
+    .about{
+        height: 100vh;
+        justify-content:space-around;
+        font-size: 12px;
+    }
+}
+
+.about-heading{
+    font-size: 40px;
+}
+.i{
+    transition: 1s;
+    color: gold;
+    font-size: 40px;
+    
+}
+.i:hover{
+    transition: 1s;
+    color: rgb(30, 32, 66);
+    font-size: 50px;
+}
+.r-btn{
+    padding-left:20px;
+    padding-right: 20px;
+    padding: 10px;
+    background-color: yellow;
+    border: none;
+    color: navy;
+    border-radius: 5px;
+}
+
+
+
+.skills {
+    transition-duration: 1s;
+    min-height: 80vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    color:skyblue;
+    padding: 40px;
+    background: linear-gradient(to left, grey,#225b6e);
+    font-family: Sans-Serif;
+}
+
+.skills-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.skill-container {
+    transition: 1s;
+    height: 30vh;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 18px 26px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: start;
+    background-color: lightgrey;
+    margin: 2px;
+    padding: 35px;
+    color: BLACK;
+    font-family: Sans-Serif;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.skill-container:hover {
+    transition-duration: 1s;
+    background-color: #225b6e;
+    color: white;
+    height: 32vh;
+    margin-top: 0px;
+    width:65%;
+    border: 1px solid lightgrey;
+}
+
+.skill-container  i{
+    font-size: 45px;
+}
+
+.skill-container:hover i{
+    transition: 1s;
+    color:#9dd8eb;
+    font-size: 90px;
+}
+
+
+
+
+
+.certificate-container{
+    transition: 1s;
+    height: 30vh;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 18px 26px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: start;
+    background-color: lightgrey;
+    margin: 2px;
+    padding: 35px;
+    color: BLACK;
+    font-family: Sans-Serif;
+    font-size: 14px;
+    margin-top: 5px;
+
+}
+.certificate-container i{
+    font-size: 30px;
+}
+.certificate-container:hover{
+    transition-duration: 1s;
+    background-color: #225b6e;
+    color: white;
+    border: 1px solid lightgrey;
+    height: 32vh;
+    margin-top: 0px;
+    width:65%;
+}
+
+.certificate-container:hover i{
+    transition: 1s;
+    color:#9dd8eb;
+    font-size: 90px;
+}
+
+
+@media screen and (max-width:768px) and (min-width:426px) {
+    .skills{
+        height: 70vh;
+        justify-content:space-around;
+    }
+    .skill-container{
+        height: 20vh;
+        width: 24vw;
+        font-size: 14px;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .skill-container:hover{
+        height: 21vh;
+        width: 25vw;
+    }
+    .skill-container i{
+      font-size: 25px;
+    }
+    .skill-container:hover i{
+      font-size: 40px;
+    }
+    .skills-list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .certificate-container{
+        height: 20vh;
+        width: 24vw;
+        font-size: 11px;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .certificate-container p{
+        display: none;
+    }
+    .certificate-container h2{
+      font-size: 14px;
+    }
+    .certificate-container:hover i{
+      font-size: 44px;
+    }
+
+    .certificate-container:hover{
+        height: 21vh;
+        width: 25vw;
+    }
+
+}
+
+
+.contact{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to left, grey , #225b6e);
+    color:skyblue;
+}
+
+.contactsList{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.contactBox{
+    transition: 1s;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    width: 20vw;
+    color: #225b6e;
+    border: 1px solid skyblue;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgb(224, 244, 251);
+
+}
+.contactBox a{
+    text-decoration: none;
+    color: #225b6e;
+}
+.contactBox i{
+    font-size: 30px;
+}
+.contactBox:hover{
+    height: 23vh;
+    width: 23vw;
+    background-color: lightblue;
+    color: black;
+    margin: 0px;
+    font-size: 15px;
+
+}
+.contactBox:hover i{
+    font-size: 60px;
+    transition: 1s;
+}
+
+.contactmini{
+    color: white;
+    margin-top: 50px;
+}
+.c-icons{
+    color: gold;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: -20px;
+}
+.c-icons i{
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.c-icons i:hover {
+    color: white;
+}
+
+
+
+.sidebar{
+  position: fixed;
+  right: 0px;
+  top:40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  width: 30px;
+  background-color: yellow;
+}
+.sidebar i:hover{
+  color:blue;
+  cursor: pointer;
+  font-size:20px;
+}
+.up-arrow{
+  color: yellow;
+  position:sticky;
+  right: 10px;
+  bottom:10px;
+  margin-left: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid yellow;
+  font-weight:bold;
+  font-size: 20px;
+}
+.up-arrow a{
+  color: yellow;
+}
+
+
+@media screen and (max-width:768px) and (min-width:426px) {
+  .contact{
+      height: 100vh;
+      justify-content:space-around;
+  }
+  .contactBox{
+      height: 20vh;
+      width: 24vw;
+      font-size: 9px;
+      justify-content: space-around;
+      padding: 20px;
+      
+  }
+  .contactBox:hover{
+      height: 21vh;
+      width: 25vw;
+      font-size: 10px;
+  }
+  .contactBox i{
+    font-size: 25px;
+  }
+  .contactBox:hover i{
+    font-size: 40px;
+  }
+  .contact-list{
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto ;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+  }
+  .sidebar{
+    display: none;
+  }
+  .up-arrow{
+    display: none;
+  }
+
+}
+
+
+
+@media  screen and (max-width:425px) {
+  .sidebar{
+      display: none;
+  }
+  .home{
+    height: 100vh;
+  }
+  .upper{
+      height: 100vh;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+  }
+  .left{
+    height: 100vh;
+    width: 100%;
+
+  }
+  .right{
+      height: 0px;
+      display: none;
+  }
+  .innerbox h1 span{
+    transition: 1s;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: prime;
+    margin-bottom: 200px;
+ }
+  .innerbox:hover h1 span{
+      transition: 1s;
+      font-size: 50px;
+      margin-bottom: 0px;
+  }
+
+  
+  .skills{
+    height: 70vh;
+    justify-content:space-around;
+  }
+  .skill-container{
+      height: 15vh;
+      width: 100%;
+      font-size: 14px;
+      justify-content: space-around;
+      padding: 20px;
+  }
+  .skill-container:hover{
+      height: 21vh;
+      width: 25vw;
+  }
+  .skill-container i{
+    font-size: 25px;
+  }
+  .skill-container:hover i{
+    font-size: 40px;
+  }
+  .skills-list{
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto ;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+  }
+  .certificate-container{
+    height: 15vh;
+    width: 100%;
+      font-size: 11px;
+      justify-content: space-around;
+      padding: 20px;
+  }
+  .certificate-container p{
+      display: none;
+  }
+  .certificate-container h2{
+    font-size: 14px;
+  }
+  .certificate-container:hover i{
+    font-size: 44px;
+  }
+
+  .certificate-container:hover{
+      height: 21vh;
+      width: 25vw;
+  }
+  .up-arrow{
+    display: none;
+  }
+
+  .about{
+    height: auto;
+  }
+  .contact{
+    height: 100vh;
+  }
+
+  .contactsList{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+  .contactBox{
+    width: 40vw;
+    height: 15vh;
+    font-size: 10px;
+  }
+  .contactBox:hover{
+    width: 42vw;
+    height:17vh ;
+  }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+  .section {
+    padding: 20px;
+  }
+
+  
+
+  
+  @keyframes scroll-in {
+    from {
+      opacity: 0;
+      scale: 0.75;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+  .u-animate-scroll-in {
+    @starting-style{
+      opacity: 0;
+      scale: 0.75;
+    }
+  
+    animation-name: scroll-in;
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 20%;
+    animation-fill-mode: backwards;
+  }
+  
+
+
+ 
+  
+  @keyframes appear1 {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 0 100% 100% );
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(1 1 0 0);
+    }
+  }
+
+  .skillsAnimate {
+    animation: appear1 linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+
+
+
+  
+  @keyframes appear2 {
+    from {
+      opacity: 0;
+      clip-path: inset(0 0 0 100% );
+    }
+    to {
+        transition: 2s;
+      opacity: 1;
+      clip-path: inset(0 0 0 0 );
+    }
+  }
+
+  .certificateAnimate {
+    animation: appear2 linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+  @keyframes appearc2 {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0 );
+    }
+    to {
+        transition: 2s;
+      opacity: 1;
+      clip-path: inset(0 0 0 0 );
+    }
+  }
+  .certificateAnimate2 {
+    animation: appearc2 linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+  @keyframes appearc3 {
+    from {
+      opacity: 0;
+      clip-path: inset(0 0 100% 0 );
+    }
+    to {
+        transition: 2s;
+      opacity: 1;
+      clip-path: inset(0 0 0 0 );
+    }
+  }
+  .certificateAnimate3 {
+    animation: appearc3 linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+  @keyframes appearc4 {
+    from {
+      opacity: 0;
+      clip-path: inset(0 0 0 100% );
+    }
+    to {
+        transition: 2s;
+      opacity: 1;
+      clip-path: inset(0 0 0 0 );
+    }
+  }
+  .certificateAnimate4 {
+    animation: appearc4 linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+  
+
+
+
+
+  
+
+  @keyframes appearcontact {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 100% );
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .conatactAnimate {
+    animation: appearcontact linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+
+
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 100% 0 0  );
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(10 0 0 0);
+    }
+  }
+
+  .aboutAnimate {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }

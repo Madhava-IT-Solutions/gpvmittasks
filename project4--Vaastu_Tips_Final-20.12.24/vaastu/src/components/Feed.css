@@ -1,0 +1,43 @@
+.feed{
+    width: 80vw;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .feedback-heading{
+    font-size: 25px;
+    color: rgb(52, 50, 180);
+    font-weight: bold;
+  }
+  .inputContainer{
+    display: flex;
+    flex-direction:column;
+    width: 80%;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .submit{
+    background-color: rgb(78, 78, 205);
+    color: aliceblue;
+  }
+  
+  .input{
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    color: rgb(77, 77, 78);
+    outline:none;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  textarea{
+    height: 60px;
+    color: rgb(77, 77, 78);
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 10px;
+  }

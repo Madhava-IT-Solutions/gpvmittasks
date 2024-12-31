@@ -1,0 +1,124 @@
+
+.blog{
+  min-height:70%;
+  width: 80%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  box-shadow: 1px 1px 3px 3px #bababa;
+  margin-left: 10px;
+  border-radius: 15px;
+  font-family: roboto;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin-left: 40px;
+  width:60%;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  text-wrap: wrap;
+}
+
+.router{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.card {
+  padding: 20px;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.h1{
+  color: rgba(202, 5, 5, 0.814);
+  margin-bottom: 0px;
+}
+
+.span{
+  color: #fcc03d ;
+}
+
+footer{
+  width: 90%;
+  height: auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks{
+  font-size: 30px;
+  font-weight: bold;
+  color: #626262;
+  font-family: robo;
+}
+
+.blogh2{
+  text-align:center;
+  font-size:30px ;
+  color:orange;
+  text-wrap: wrap;
+  width: 80%;
+}
+.blogp{
+  font-size:14px;
+  font-family:roboto;
+  width: 90%;
+  text-wrap: wrap;
+}
+
+
+@media screen and (max-width:426px) {
+.blog{
+  min-height:70%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-left: 10px;
+  font-family: roboto;
+  border-radius: 2px;
+  box-shadow: none;
+  text-wrap: wrap;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin-left: 40px;
+  width:100%;
+  height: 100%;
+  font-size: 10px;
+  overflow: scroll;
+}
+.blogh2{
+  text-align:left;
+  font-size:20px ;
+  color:orange;
+}
+.blogp{
+  font-size:10px;
+  font-family:roboto;
+}
+
+}
+
+
+
