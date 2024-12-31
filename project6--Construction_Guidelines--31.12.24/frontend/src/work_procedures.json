@@ -1,0 +1,573 @@
+ {"construction" :[
+    {
+        "id": "1",
+        "name_of_work": "CC Road",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/cc-road.png"
+    },
+    {
+        "id": "2",
+        "name_of_work": "BT Road",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/bt-road.png"
+    },
+    {
+        "id": "3",
+        "name_of_work": "Buildings",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/buildings.png"
+    },
+    {
+        "id": "4",
+        "name_of_work": "Bridge",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/bridge.png"
+    },
+    {
+        "id": "5",
+        "name_of_work": "Surveying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/mapping.png"
+    },
+    {
+        "id": "6",
+        "name_of_work": "Soil Investigation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/soil-testing-exploration.png"
+    },
+    {
+        "id": "7",
+        "name_of_work": "Partition Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/partition.png"
+    },
+    {
+        "id": "8",
+        "name_of_work": "Earth Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/earth-work.png"
+    },
+    {
+        "id": "9",
+        "name_of_work": "Jungle Clearance",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/jungle.png"
+    },
+    {
+        "id": "10",
+        "name_of_work": "Flooring",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/flooring.png"
+    },
+    {
+        "id": "11",
+        "name_of_work": "False Ceiling",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/false-ceiling.png"
+    },
+    {
+        "id": "12",
+        "name_of_work": "Fabrications Works",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/truss-1.png"
+    },
+    {
+        "id": "13",
+        "name_of_work": "Erection Works",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/Erection.png"
+    },
+    {
+        "id": "14",
+        "name_of_work": "Excavation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/excavator.png"
+    },
+    {
+        "id": "15",
+        "name_of_work": "Painting",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/painting.png"
+    },
+    {
+        "id": "16",
+        "name_of_work": "Sewage Treatment",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/sewage-plant.png"
+    },
+    {
+        "id": "17",
+        "name_of_work": "Water Treatment plant installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/water-treatment.png"
+    },
+    {
+        "id": "18",
+        "name_of_work": "RO Plant Installation work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/reverse-osmosis.png"
+    },
+    {
+        "id": "19",
+        "name_of_work": "Dismantling",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/dismantling.png"
+    },
+    {
+        "id": "20",
+        "name_of_work": "Plumbing Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/plumbing.png"
+    },
+    {
+        "id": "21",
+        "name_of_work": "Sanitary Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/sanitary.png"
+    },
+    {
+        "id": "22",
+        "name_of_work": "Piling",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/piling.png"
+    },
+    {
+        "id": "23",
+        "name_of_work": "Pile Foundation Casting",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/pile.png"
+    },
+    {
+        "id": "24",
+        "name_of_work": "Water Supply",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/water-supply.png"
+    },
+    {
+        "id": "25",
+        "name_of_work": "Glazing work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/glazing-work.png"
+    },
+    {
+        "id": "26",
+        "name_of_work": "Culvert",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/culvert.png"
+    },
+    {
+        "id": "27",
+        "name_of_work": "Modular Kitchen",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/modular-kitchen.png"
+    },
+    {
+        "id": "28",
+        "name_of_work": "Retaining Walls",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/retaining-wall.png"
+    },
+    {
+        "id": "29",
+        "name_of_work": "Fencing",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/fencing.png"
+    },
+    {
+        "id": "30",
+        "name_of_work": "Boundary Walls",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/boundary-wall.png"
+    },
+    {
+        "id": "31",
+        "name_of_work": "UPVC Windows",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/upvc-windows.png"
+    },
+    {
+        "id": "32",
+        "name_of_work": "GRC Jaali",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/grc-jali-design.png"
+    },
+    {
+        "id": "33",
+        "name_of_work": "Gutter work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/gutter-work.png"
+    },
+    {
+        "id": "34",
+        "name_of_work": "Anti Termite Treatment",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/anti-termite.png"
+    },
+    {
+        "id": "35",
+        "name_of_work": "Water Proofing Traetment",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/waterproof-fabric.png"
+    },
+    {
+        "id": "36",
+        "name_of_work": "Brick work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/brick-work.png"
+    },
+    {
+        "id": "37",
+        "name_of_work": "AAC Block Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/aac-concrete.png"
+    },
+    {
+        "id": "38",
+        "name_of_work": "Paver Block Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/paver-block-work.png"
+    },
+    {
+        "id": "39",
+        "name_of_work": "Truss Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/truss-work.png"
+    },
+    {
+        "id": "40",
+        "name_of_work": "Acoustic Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/home-cinema.png"
+    },
+    {
+        "id": "41",
+        "name_of_work": "Retrofitting Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/retrofit.png"
+    },
+    {
+        "id": "42",
+        "name_of_work": "Embankment Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/embankment.png"
+    },
+    {
+        "id": "43",
+        "name_of_work": "Trench Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/earth-work.png"
+    },
+    {
+        "id": "44",
+        "name_of_work": "Storm Water Drain",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/storm-water-drain.png"
+    },
+    {
+        "id": "45",
+        "name_of_work": "HT Lines",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/ht-wires.png"
+    },
+    {
+        "id": "46",
+        "name_of_work": "Coffer Dams",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/coffer-dam.png"
+    },
+    {
+        "id": "47",
+        "name_of_work": "Sports Facilities",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/sports-facility.png"
+    },
+    {
+        "id": "48",
+        "name_of_work": "Epoxy Floor",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/epoxy-floor.png"
+    },
+    {
+        "id": "49",
+        "name_of_work": "Renovation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/renovation.png"
+    },
+    {
+        "id": "50",
+        "name_of_work": "ACP Cladding",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/acp-panel.png"
+    },
+    {
+        "id": "51",
+        "name_of_work": "Grease Trap Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/grease-trap.png"
+    },
+    {
+        "id": "52",
+        "name_of_work": "Awning installation work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/awning.png"
+    },
+    {
+        "id": "53",
+        "name_of_work": "Roller Blinds",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/roller-blinds.png"
+    },
+    {
+        "id": "54",
+        "name_of_work": "Water Pipeline Laying ",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/water-pipeline.png"
+    },
+    {
+        "id": "55",
+        "name_of_work": "Plumbing Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/06/securiy-post.png"
+    },
+    {
+        "id": "56",
+        "name_of_work": "Scaffolding",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/scaffolding.png"
+    },
+    {
+        "id": "57",
+        "name_of_work": "Roofing Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/roofing-work.png"
+    },
+    {
+        "id": "58",
+        "name_of_work": "Drone Survvey",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/photogrammetry.png"
+    },
+    {
+        "id": "59",
+        "name_of_work": "BIM Models",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/bim.png"
+    },
+    {
+        "id": "60",
+        "name_of_work": "Cladding Work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/cladding.png"
+    },
+    {
+        "id": "61",
+        "name_of_work": "Fire rated doors",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/fire-proof.png"
+    }
+],
+"electrical":[
+    {
+        "id": "62",
+        "name_of_work": "Wiring",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/wiring1.png"
+    },
+    {
+        "id": "63",
+        "name_of_work": "Conduiting",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/conduiting.png"
+    },
+    {
+        "id": "64",
+        "name_of_work": "Fire Alarm System",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/fire-alarm.png"
+    },
+    {
+        "id": "65",
+        "name_of_work": "Fire Fighting System",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/fire-fighting.png"
+    },
+    {
+        "id": "66",
+        "name_of_work": "Solar Panel Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/solar-energy.png"
+    },
+    {
+        "id": "67",
+        "name_of_work": "HVAC system",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/coolers.png"
+    },
+    {
+        "id": "68",
+        "name_of_work": "UPS",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/ups.png"
+    },
+    {
+        "id": "69",
+        "name_of_work": "Air Conditioners",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/ac.png"
+    },
+    {
+        "id": "70",
+        "name_of_work": "Lighting",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/lighting.png"
+    },
+    {
+        "id": "71",
+        "name_of_work": "Facade Lighting",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/facade-lighting.png"
+    },
+    {
+        "id": "72",
+        "name_of_work": "Transformer",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/transformer.png"
+    },
+    {
+        "id": "73",
+        "name_of_work": "Diesel Generators",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/dg-diesel-generator.png"
+    },
+    {
+        "id": "74",
+        "name_of_work": "Earthing Pits",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/earthing-pit.png"
+    },
+    {
+        "id": "75",
+        "name_of_work": "Distribution Boards Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/db-distribution-board.png"
+    },
+    {
+        "id": "76",
+        "name_of_work": "Cable Tray",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/cable-tray.png"
+    },
+    {
+        "id": "77",
+        "name_of_work": "Air Compressor",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/air-compressor.png"
+    },
+    {
+        "id": "78",
+        "name_of_work": "Switches and Sockets",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/switch-and-socket.png"
+    },
+    {
+        "id": "79",
+        "name_of_work": "Control Panels",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/control-panel.png"
+    },
+    {
+        "id": "80",
+        "name_of_work": "AMF Panel",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/amf-panel.png"
+    },
+    {
+        "id": "81",
+        "name_of_work": "Street Pole",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/street-pole.png"
+    },
+    {
+        "id": "82",
+        "name_of_work": "Sub Stations",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/sub-station.png"
+    },
+    {
+        "id": "83",
+        "name_of_work": "Lightning Conductor",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/lightning-conductor.png"
+    },
+    {
+        "id": "84",
+        "name_of_work": "MV Cable Laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/medium-voltage-mvc-cable.png"
+    },
+    {
+        "id": "85",
+        "name_of_work": "BUS bar Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/bus-electricity.png"
+    },
+    {
+        "id": "86",
+        "name_of_work": "VRV,VRF Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/vrv-vrf-variable-refrigerant-flow.png"
+    },
+    {
+        "id": "87",
+        "name_of_work": "HVAC Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/hvac.png"
+    },
+    {
+        "id": "88",
+        "name_of_work": "HVLS Fans Installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/hvls-high-voltage-low-speed-fan.png"
+    },
+    {
+        "id": "89",
+        "name_of_work": "Lan Wiring",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/lan-wiring.png"
+    },
+    {
+        "id": "90",
+        "name_of_work": "Laying OFC",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/optical-fiber.png"
+    },
+    {
+        "id": "91",
+        "name_of_work": "PA System",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/smoke-detector.png"
+    },
+    {
+        "id": "92",
+        "name_of_work": "Fire System(Smoke Detection)",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/smoke-detector.png"
+    },
+    {
+        "id": "93",
+        "name_of_work": "Data Cabling",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/data-cabling.png"
+    },
+    {
+        "id": "94",
+        "name_of_work": "LT Cable laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/LT-Cables.png"
+    },
+    {
+        "id": "95",
+        "name_of_work": "HT Cable laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/HT-Cables.png"
+    },
+    {
+        "id": "96",
+        "name_of_work": "Cell Tower installation",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/cell-tower.png"
+    }
+],
+"mechanical":[
+    {
+        "id": "99",
+        "name_of_work": "RO Plant",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/RO-Plant.png"
+    },
+    {
+        "id": "100",
+        "name_of_work": "HDPE Pipe Laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/pipe-laying.png"
+    },
+    {
+        "id": "101",
+        "name_of_work": "UPVC Pipe laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/upvc-pipe-laying.png"
+    },
+    {
+        "id": "102",
+        "name_of_work": "PVC Pipe laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/pvc-pipe-laying.png"
+    },
+    {
+        "id": "103",
+        "name_of_work": "Hume pipes laying",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/hume-pipe-laying.png"
+    },
+    {
+        "id": "104",
+        "name_of_work": "Overhead watertank",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/over-head-water-tank.png"
+    },
+    {
+        "id": "105",
+        "name_of_work": "Drain work",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/drain-work.png"
+    },
+    {
+        "id": "106",
+        "name_of_work": "Sewerage Network",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/sewerage-network.png"
+    },
+    {
+        "id": "107",
+        "name_of_work": "Elevators",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/lifts.png"
+    },
+    {
+        "id": "108",
+        "name_of_work": "Truss Erection",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/truss-1.png"
+    },
+    {
+        "id": "109",
+        "name_of_work": "Girder Erection",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/girder.png"
+    },
+    {
+        "id": "110",
+        "name_of_work": "Containers",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/container.png"
+    },
+    {
+        "id": "111",
+        "name_of_work": "Parking Sheds",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/parking-garage.png"
+    },
+    {
+        "id": "112",
+        "name_of_work": "Escalator",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/12/escalator.png"
+    },
+    {
+        "id": "113",
+        "name_of_work": "Tower Erection",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/tower-erection.png"
+    },
+    {
+        "id": "114",
+        "name_of_work": "Bore Well",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/borewell.png"
+    },
+    {
+        "id": "115",
+        "name_of_work": "Motor Pumps",
+        "image": "https://ssvconstructions.in/wp-content/uploads/2024/05/motor-pump.png"
+    }
+]
+
+}
