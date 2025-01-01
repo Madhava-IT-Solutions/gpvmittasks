@@ -11,10 +11,12 @@ function DetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const apiUrl = process.env.SSV_FRONTEND 
+
   useEffect(() => {
     // Fetch category data
     axios
-      .get(`https://gpvmittasks-bzhh.onrender.com/details/${name_of_work}`)
+      .get(`${apiUrl}/details/${name_of_work}`)
       .then((response) => {
         setData(response.data[0]);
         setLoading(false);
