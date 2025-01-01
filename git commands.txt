@@ -1,0 +1,37 @@
+This is a git initiated repository updated in 31-12-2024 
+
+This folder is directly committed to github so Don't change the directory paths.
+
+If you done any new works on this final projects you can commit the entire folder without changing directory.
+
+Note: Don't post this text to github, before committing in git you can move this text to another folder for a little time to push this entire folder to github.
+
+
+git config --global user.email "Enter you email ID here"
+
+git config --global user.name "rahul"
+
+git init
+
+git remote add origin https://github.com/Madhava-IT-Solutions/gpvmittasks.git
+
+git add -A 
+git add . for all folders
+
+git commit -m "commit message"
+
+ git branch -M main
+
+git push -u origin main
+
+
+
+git pull origin main
+
+git push -u origin main
+
+git fetch origin
+git rebase origin/main
+
+git push -f origin main
+
