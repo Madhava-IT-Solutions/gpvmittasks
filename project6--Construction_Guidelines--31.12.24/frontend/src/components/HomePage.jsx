@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import {Mosaic,Slab} from 'react-loading-indicators';
 import './Home.css';
-import Data from './work_procedures.json';
+import Data from '../work_procedures.json';
 
 const styles = {
   searchContainer: {
