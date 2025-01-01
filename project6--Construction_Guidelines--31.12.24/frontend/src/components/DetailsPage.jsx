@@ -64,11 +64,12 @@ function DetailsPage() {
   
     // Add a description at the top
     const description = `
-      <div style="text-align: center; margin-bottom: 20px;">
-        <h2>SSV Constructions</h2>
-        <p>This document is downloaded from the SSV Constructions.</p>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <h1 style="color:#e86666;" >SSV Constructions</h1>
+    <img src="https://ssvconstructions.in/wp-content/uploads/2024/05/cropped-ssv-final-logo-transparent-png-186x86.png" alt="logo" />
       </div>
-    `;
+`;
+
   
     // Add a watermark using inline CSS
     const watermark = `
@@ -81,10 +82,11 @@ function DetailsPage() {
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 60px;
-            color: rgba(0, 0, 0, 0.1);
+            color: rgba(162, 162, 162, 0.1);
             z-index: -1;
             pointer-events: none;
             white-space: nowrap;
+
           }
         }
       </style>
