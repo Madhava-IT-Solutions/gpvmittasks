@@ -16,7 +16,7 @@ function DetailsPage() {
   useEffect(() => {
     // Fetch category data
     axios
-      .get(`${apiUrl}/details/${name_of_work}`)
+      .get(`https://gpvmittasks-bzhh.onrender.com/details/${name_of_work}`)
       .then((response) => {
         setData(response.data[0]);
         setLoading(false);
