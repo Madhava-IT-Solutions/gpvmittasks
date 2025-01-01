@@ -58,6 +58,58 @@ function DetailsPage() {
     "Possible Repairs":convertNewLinesToBullets(data.possible_repairs)
   }
 
+  function print() {
+    // Select the content you want to print
+    const content = document.body.innerHTML;
+  
+    // Add a description at the top
+    const description = `
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h2>SSV Constructions</h2>
+        <p>This document is downloaded from the SSV Constructions.</p>
+      </div>
+    `;
+  
+    // Add a watermark using inline CSS
+    const watermark = `
+      <style>
+        @media print {
+          body::after {
+            content: 'SSV Constructions';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            color: rgba(0, 0, 0, 0.1);
+            z-index: -1;
+            pointer-events: none;
+            white-space: nowrap;
+          }
+        }
+      </style>
+    `;
+  
+    // Combine watermark, description, and content
+    const printContent = `
+      ${watermark}
+      ${description}
+      ${document.body.innerHTML}
+    `;
+  
+    // Replace the page content with the print content
+    document.body.innerHTML = printContent;
+  
+    // Trigger the print dialog
+    window.print();
+  
+    // Restore the original content
+    document.body.innerHTML = content;
+  
+    // Reload styles
+    window.location.reload();
+  }
+  
 
 
 
@@ -65,12 +117,12 @@ function DetailsPage() {
 
   return (
       <div className="details">
-      <h1>{data.name_of_work}</h1>
+      <h1 className='d-heading'>{data.name_of_work}</h1>
       {
         
       }
-        <table id = "customers" className='table' >
-        <tr>
+        <table id = "details" className='table' >
+        <tr className='tb-headings'>
             <th>Details</th>
             <th>Description</th>
         </tr>
@@ -82,9 +134,9 @@ function DetailsPage() {
               }
               else{
               return (
-                  <tr key={index} className="tr">
-                      <td className='table-detail'> {key} </td>
-                      <td><pre className='pre'>{val}</pre></td>
+                  <tr key={index} className="table-row">
+                      <td className='name'> {key} </td>
+                      <td><pre className='description'>{val}</pre></td>
                   </tr>
                 ) }  }
                 )}

@@ -1,51 +1,33 @@
+/* General Styles */
 .details {
-    text-align: center;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 40px;
-  }
-  
-  .details-container p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  pre{
-    text-wrap: wrap;
-    font-size: 14px;
-    list-style-type: square;
-  }
+  text-align: center;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
 
-  h2{
-    color: rgb(222, 99, 99);
-  }
-  h1{
-    color: rgb(209, 75, 75);
-    font-weight: bolder;
-  }
+.d-heading {
+  color: rgb(209, 75, 75);
+  font-weight: bolder;
+}
 
+.description {
+  text-wrap: wrap;
+  font-size: 14px;
+  list-style-type: square;
+}
 
+.tb-headings {
+  background-color: #ffb07f;
+  border: 2px solid rgb(191, 170, 170);
+}
 
-
-  .data{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
-    width: 100%;
-  }
-  .category{
-    border: 1px solid green;
-    text-align: start;
-  }
-
-
-.loading-page{
-  height:100vh;
-  width:100%;
+.loading-page {
+  height: 100vh;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -54,52 +36,118 @@
   color: rgb(255, 179, 0);
 }
 
-
-
-#customers {
+/* Table Styles */
+#details {
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-  border: none;
   width: 70%;
   margin-bottom: 40px;
+  border-collapse: collapse;
   border: 1px solid rgb(219, 202, 202);
 }
 
-#customers td, #customers th {
+#details td, #details th {
   text-align: left;
   padding: 8px;
-}
-.table-detail{
-  color: #cd4f00;
-  height: 100%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  margin-top: 15px;
+  border: 1px solid rgb(219, 202, 202);
 }
 
-#customers tr:nth-child(even){background-color: #fffafa;}
+#details tr:nth-child(even) {
+  background-color: #fffafa;
+}
 
-#customers tr:hover {background-color: #ffeded;}
+#details tr:hover {
+  background-color: #ffeded;
+}
 
-#customers th {
+#details th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: #80481d89;
   color: rgb(0, 34, 34);
 }
 
-
-.printButton{
+/* Button Styles */
+.printButton {
   border-radius: 5px;
   border: none;
   outline: none;
   background-color: rgb(52, 97, 171);
   color: white;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 5px 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.printButton:hover {
+  background-color: rgb(40, 80, 150);
+  transform: scale(1.05);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .details {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .description {
+    font-size: 16px; /* Adjusted for readability */
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  pre {
+    font-size: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .loading-page {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  #details {
+    width: 90%;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+
+  #details td, #details th {
+    padding: 6px;
+  }
+
+  .printButton {
+    font-size: 14px;
+    padding: 8px;
+    margin: 10px 0;
+    width: 90%;
+  }
+}
+
+/* Transition Effects for Text and Table */
+.details-container p {
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+pre {
+  transition: font-size 0.3s ease;
+}
+
+h1, h2 {
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+/* Table Hover Effects */
+#details tr:hover {
+  background-color: #ffe4e4;
+  transition: background-color 0.3s ease;
 }

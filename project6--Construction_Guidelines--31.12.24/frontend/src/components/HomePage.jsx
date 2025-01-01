@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import {Mosaic,Slab} from 'react-loading-indicators';
-import './Home.css';
 import Data from '../work_procedures.json';
+import './Home.css';
 
 const styles = {
   searchContainer: {
@@ -165,7 +165,7 @@ function HomePage() {
         </div>
       </div>
 
-      <h2 className='work-category'>Construction works</h2>
+      <h2 className='work-category-heading'>Construction works</h2>
       <p>Below are the main categories of construction works. Click on any category to access related information. </p>
       <div
         className='grid-container1'
@@ -192,7 +192,7 @@ function HomePage() {
         {constructionLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
       </div>
 
-      <h2 className='work-category'>Electrical works</h2>
+      <h2 className='work-category-heading'>Electrical works</h2>
       <p>Below are the main categories of Electrical works. Click on any category to access related information. </p>
       <div
         className='grid-container'
@@ -220,7 +220,7 @@ function HomePage() {
       </div>
 
 
-      <h2 className='work-category'>Mechanical works</h2>
+      <h2 className='work-category-heading'>Mechanical works</h2>
       <p>Below are the main categories of Mechanical works. Click on any category to access related information. </p>
       <div
         className='grid-container'
@@ -239,7 +239,7 @@ function HomePage() {
                 src={item.image}
                 alt={`container${index + 1}`}
               />
-              <h2>{item.name_of_work}</h2>
+              <h2 className='category-heading' >{item.name_of_work}</h2>
               <button className='click'>Click here</button>
             </div>
           ))}
