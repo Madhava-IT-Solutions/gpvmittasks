@@ -14,7 +14,7 @@ const Home = () => {
 
         </div>
         <Link to={`/category/Plot-Selection`} >
-              <button style={{color:"#a90000 "}}>Get Started</button>
+              <button style={{color:"#a90000 "," background-color":"blue"}}>Get Started</button>
         </Link>
       </div>
     );
