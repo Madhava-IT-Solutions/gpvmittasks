@@ -66,7 +66,7 @@ function DetailsPage() {
     const description = `
   <div style="text-align: center; margin-bottom: 20px;">
     <h1 style="color:#e86666;" >SSV Constructions</h1>
-    <img src="https://ssvconstructions.in/wp-content/uploads/2024/05/cropped-ssv-final-logo-transparent-png-186x86.png" alt="logo" />
+    <img style="position:fixed; top:30px;" src="https://ssvconstructions.in/wp-content/uploads/2024/05/cropped-ssv-final-logo-transparent-png-186x86.png" alt="logo" />
       </div>
 `;
 
