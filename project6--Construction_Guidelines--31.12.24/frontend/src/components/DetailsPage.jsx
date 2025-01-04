@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Slab} from 'react-loading-indicators';
 import axios from 'axios';
-import dotenv from 'dotenv';
 
 import "./Details.css"
 
@@ -15,7 +14,7 @@ function DetailsPage() {
 
 
   useEffect(() => {
-    const baseURL =  process.env.Node_Env === "production" ? 'https://gpvmittasks-bzhh.onrender.com': 'http://localhost:5000';
+    const baseURL =  'http://localhost:5000';
     // Fetch category data
     axios
       .get(`${baseURL}/details/${name_of_work}`)

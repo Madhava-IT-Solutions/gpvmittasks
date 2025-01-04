@@ -24,6 +24,7 @@ if (!dbConfig.host || !dbConfig.user || !dbConfig.password || !dbConfig.database
 
 app.get('/details/:name_of_work?', async (req, res) => {
   const { name_of_work } = req.params;
+  console.log(name_of_work)
 
   let connection;
   try {
