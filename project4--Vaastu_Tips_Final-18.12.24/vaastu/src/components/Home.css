@@ -105,3 +105,30 @@
     font-size: 0.85rem;
   }
 }
+
+
+
+
+
+.startBtn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffb584;
+  color: #17503a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  transition: .5s;
+  border:1px solid rgb(255, 112, 112);
+}
+.startBtn:hover {
+  border-color: #1dc051;
+  background-color: #7ee2ba;
+  transition: .5s;
+  color: white;
+  scale: 1.05;
+}
