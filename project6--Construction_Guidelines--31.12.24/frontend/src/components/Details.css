@@ -10,8 +10,9 @@
 }
 
 .d-heading {
-  color: rgb(209, 75, 75);
+  color: rgb(210, 97, 97);
   font-weight: bolder;
+  text-decoration: underline;
 }
 
 .description {
@@ -157,4 +158,94 @@ h1, h2 {
 #details tr:hover {
   background-color: #ffe4e4;
   transition: background-color 0.3s ease;
+}
+
+.bar{
+  height: 110px;
+  width: 80vw;
+  top: 0px;
+  border: 1px solid rgb(255, 251, 251);
+  margin-bottom: 30px;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  position: sticky;
+  top: 0px;
+}
+
+.logo{
+  width: 40vw;
+  text-align: left;
+  justify-self: center;
+  align-self: center;
+}
+.heading{
+  width:60vw;
+  text-align: left;
+}
+.logoImg{
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+
+
+@media print {
+  /* Modify the layout for printing */
+  .details {
+    font-family: Arial, sans-serif;
+    padding-bottom: 10px;
+  }
+
+  .printButton {
+    display: none; /* Hide print button */
+  }
+
+  /* Optional: Modify table layout */
+  table {
+    width: 140%;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  /* Change specific table text color or font size for print */
+  .table-row td {
+    font-size: 14px;
+    color: black;
+  }
+
+  /* Optional: Hide unnecessary details for print */
+  .unnecessary-section {
+    display: none;
+  }
+}
+
+@media print {
+  /* Hide all extra dev info and unnecessary elements */
+  .dev-info, .vite-info, .react-warning {
+    display: none;
+  }
+
+  /* Optionally, hide header/footer or other unwanted sections */
+  .navbar, .footer, .print-button {
+    display: none;
+  }
+  .bar{
+    position: static;
+    border-radius: 10px;
+    margin-top: 0px;
+  }
 }

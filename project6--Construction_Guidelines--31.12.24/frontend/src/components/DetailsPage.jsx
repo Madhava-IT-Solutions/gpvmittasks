@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import {Slab} from 'react-loading-indicators';
 import axios from 'axios';
 
@@ -12,9 +12,11 @@ function DetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  
+    const navigate = useNavigate();
 
   useEffect(() => {
-    const baseURL =  'http://localhost:5000';
+    const baseURL =  'https://gpvmittasks-bzhh.onrender.com';
     // Fetch category data
     axios
       .get(`${baseURL}/details/${name_of_work}`)
@@ -67,9 +69,7 @@ function DetailsPage() {
     // Add a description at the top
     const description = `
   <div style="text-align: center; margin-bottom: 20px;">
-    <h1 style="color:#e86666;" >SSV Constructions</h1>
-    <img style="position:fixed; top:30px;" src="https://ssvconstructions.in/wp-content/uploads/2024/05/cropped-ssv-final-logo-transparent-png-186x86.png" alt="logo" />
-      </div>
+  </div>
 `;
 
   
@@ -121,10 +121,18 @@ function DetailsPage() {
 
   return (
       <div className="details">
-      <h1 className='d-heading'>{data.name_of_work}</h1>
-      {
+        <div className='bar'>
+        <div className='logo'>
+
+          <img onClick={() => navigate(`/`)} className = "logoImg" src="https://ssvconstructions.in/wp-content/uploads/2025/01/SSV-Constructions-Logo.png" alt="logo"/>
+        </div>
+        <div className='heading'>
+        <h1 className='d-heading'>{data.name_of_work}</h1>
+        </div>
+              
+
+        </div>
         
-      }
         <table id = "details" className='table' >
         <tr className='tb-headings'>
             <th>Details</th>

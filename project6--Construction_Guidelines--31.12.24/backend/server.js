@@ -13,7 +13,8 @@ const dbConfig = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: 3306, // Change the port to 3306
+  port: 3306, 
+  connectTimeout: 10000// Change the port to 3306
 };
 
 // Validate environment variables
