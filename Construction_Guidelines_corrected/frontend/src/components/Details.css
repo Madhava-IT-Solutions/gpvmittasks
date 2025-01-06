@@ -1,0 +1,251 @@
+/* General Styles */
+.details {
+  text-align: center;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.d-heading {
+  color: rgb(210, 97, 97);
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.description {
+  text-wrap: wrap;
+  font-size: 14px;
+  list-style-type: square;
+}
+
+.tb-headings {
+  background-color: #ffb07f;
+  border: 2px solid rgb(191, 170, 170);
+  font-size: 18px;
+}
+
+
+.loading-page {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 179, 0);
+}
+
+/* Table Styles */
+#details {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 70%;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  border: 1px solid rgb(219, 202, 202);
+}
+
+#details td, #details th {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid rgb(219, 202, 202);
+}
+.name{
+  align-self: top;
+  color: rgb(153, 2, 2);
+  font-weight: 600;
+}
+
+#details tr:nth-child(even) {
+  background-color: #fffafa;
+}
+
+#details tr:hover {
+  background-color: #ffeded;
+}
+
+#details th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #80481d89;
+  color: rgb(0, 34, 34);
+}
+
+/* Button Styles */
+.printButton {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: rgb(52, 97, 171);
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.printButton:hover {
+  background-color: rgb(40, 80, 150);
+  transform: scale(1.05);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .details {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .description {
+    font-size: 16px; /* Adjusted for readability */
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  pre {
+    font-size: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .loading-page {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  #details {
+    width: 90%;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+
+  #details td, #details th {
+    padding: 6px;
+  }
+
+  .printButton {
+    font-size: 14px;
+    padding: 8px;
+    margin: 10px 0;
+    width: 90%;
+  }
+}
+
+/* Transition Effects for Text and Table */
+.details-container p {
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+pre {
+  transition: font-size 0.3s ease;
+}
+
+h1, h2 {
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+/* Table Hover Effects */
+#details tr:hover {
+  background-color: #ffe4e4;
+  transition: background-color 0.3s ease;
+}
+
+.bar{
+  height: 110px;
+  width: 80vw;
+  top: 0px;
+  border: 1px solid rgb(255, 251, 251);
+  margin-bottom: 30px;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  position: sticky;
+  top: 0px;
+}
+
+.logo{
+  width: 40vw;
+  text-align: left;
+  justify-self: center;
+  align-self: center;
+}
+.heading{
+  width:60vw;
+  text-align: left;
+}
+.logoImg{
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+
+
+@media print {
+  /* Modify the layout for printing */
+  .details {
+    font-family: Arial, sans-serif;
+    padding-bottom: 10px;
+  }
+
+  .printButton {
+    display: none; /* Hide print button */
+  }
+
+  /* Optional: Modify table layout */
+  table {
+    width: 140%;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  /* Change specific table text color or font size for print */
+  .table-row td {
+    font-size: 14px;
+    color: black;
+  }
+
+  /* Optional: Hide unnecessary details for print */
+  .unnecessary-section {
+    display: none;
+  }
+}
+
+@media print {
+  /* Hide all extra dev info and unnecessary elements */
+  .dev-info, .vite-info, .react-warning {
+    display: none;
+  }
+
+  /* Optionally, hide header/footer or other unwanted sections */
+  .navbar, .footer, .print-button {
+    display: none;
+  }
+  .bar{
+    position: static;
+    border-radius: 10px;
+    margin-top: 0px;
+  }
+}

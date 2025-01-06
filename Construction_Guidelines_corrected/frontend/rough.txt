@@ -1,0 +1,28 @@
+{Data.filter(city=> city.name_of_work.includes(search)).map(city => { 
+            return  <div style={{'border':'1px solid red','padding':'10px', 'margin':'50px' , 'height':'10vh'}}  >{city.name_of_work} </div> })}
+
+  
+  .table{
+    border: 1px solid rgb(0, 0, 0);
+    width: 70%;
+    margin-bottom: 40px;
+  }
+  tr{
+    border: 1px solid rgb(0, 0, 0);
+    height:50px;
+    text-align: start;
+    
+  }
+  th{
+    border: 1px solid rgb(3, 1, 1);
+    color: rgb(182, 77, 77);
+    text-align: left;
+    padding: 10px;
+    min-width: 20%;
+  }
+  td{
+    border:1px solid rgb(0, 0, 0);
+    margin-left: 20px;
+    padding: 10px;
+  }
+ 

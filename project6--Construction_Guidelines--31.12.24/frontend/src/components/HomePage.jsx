@@ -28,6 +28,14 @@ const styles = {
 };
 
 function HomePage() {
+
+  const [activeField, setActiveField] = useState('Construction');
+
+  const handleButtonClick = (field) => {
+    setActiveField(field);
+  };
+
+
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [constructionItems, setConstructionItems] = useState([]);
@@ -147,9 +155,10 @@ function HomePage() {
 
   return (
     <div className='home'>
-      <h1>Construction <span className='g'>Guide</span></h1>
-      <div className='page-description'>
-        <p>The Construction Guide page serves as a comprehensive resource for all major work categories, including construction, electrical, and mechanical works. It provides organized and detailed information to support project planning and execution.</p>
+
+        <div className='header'>
+      <div className='heading-box'>
+          <h1>Construction <span className='g'>Guide</span></h1>
       </div>
       <div className='search-container'>
         <div style={styles.searchContainer}>
@@ -165,87 +174,143 @@ function HomePage() {
         </div>
       </div>
 
-      <h2 className='work-category-heading'>Construction works</h2>
-      <p>Below are the main categories of construction works. Click on any category to access related information. </p>
-      <div
-        className='grid-container1'
-        id='construction'
-        onScroll={handleScroll1}
-        style={{ height: '400px', overflowY: 'scroll' }} // Scrollable container
-      >
-        {constructionItems
-          .filter((item) =>
-            item.name_of_work.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((item, index) => (
-            <div key={index} className='card' onClick={() => navigate(`/details/${item.name_of_work}`)}>
-              <img
-                className='container-image'
-                src={item.image}
-                alt={`container${index + 1}`}
-              />
-              <h2>{item.name_of_work}</h2>
-              <button className='click'>Click here</button>
-            </div>
-          ))}
+        </div>
 
-        {constructionLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
+      {/* Buttons */}
+      
+      <div className="button-bar1">
+        <button 
+          className={`button ${activeField === 'Construction' ? 'active' : ''}`} 
+          onClick={() => handleButtonClick('Construction')}
+        >
+          <h2 className='work-category-heading'>Construction Works</h2>
+        </button>
+        <button 
+          className={`button ${activeField === 'Electrical' ? 'active' : ''}`} 
+          onClick={() => handleButtonClick('Electrical')}
+        >
+           <h2 className='work-category-heading'>Electrical Works</h2>
+        </button>
+        <button 
+          className={`button ${activeField === 'Mechanical' ? 'active' : ''}`} 
+          onClick={() => handleButtonClick('Mechanical')}
+        >
+          <h2 className='work-category-heading'>Mechanical Works</h2>
+        </button>
+
       </div>
 
-      <h2 className='work-category-heading'>Electrical works</h2>
-      <p>Below are the main categories of Electrical works. Click on any category to access related information. </p>
-      <div
-        className='grid-container'
-        id='electrical'
-        onScroll={handleScroll2}
-        style={{ height: '400px', overflowY: 'scroll' }} // Scrollable container
-      >
-        {electricalItems
-          .filter((item) =>
-            item.name_of_work.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((item, index) => (
-            <div key={index} className='card' onClick={() => navigate(`/details/${item.name_of_work}`)}>
-              <img
-                className='container-image'
-                src={item.image}
-                alt={`container${index + 1}`}
-              />
-              <h2>{item.name_of_work}</h2>
-              <button className='click'>Click here</button>
-            </div>
-          ))}
+      <div className="button-bar2">
+        <button 
+          className={`button ${activeField === 'Construction' ? 'active' : ''}`} 
+          onClick={() => handleButtonClick('Construction')}
+        >
+          <h2 >Construction</h2>
+        </button>
+        <button 
+          className={`button ${activeField === 'Electrical' ? 'active' : ''}`} 
+          onClick={() => handleButtonClick('Electrical')}
+        >
+           <h2>Electrical</h2>
+        </button>
+        <button 
+          className={`button ${activeField === 'Mechanical' ? 'active' : ''}`} 
+          onClick={() => handleButtonClick('Mechanical')}
+        >
+          <h2>Mechanical</h2>
+        </button>
 
-        {electricalLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
       </div>
+      
+      
+
+      {/* Display Area */}
+      
+        
+        {activeField === 'Construction' && (
+          <div
+          className='grid-container'
+          id='construction'
+          onScroll={handleScroll1}
+           // === container
+        >
+          {constructionItems
+            .filter((item) =>
+              item.name_of_work.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((item, index) => (
+              <div key={index} className='card' onClick={() => navigate(`/details/${item.name_of_work}`)}>
+                <img
+                  className='container-image'
+                  src={item.image}
+                  alt={`container${index + 1}`}
+                />
+                <h2>{item.name_of_work}</h2>
+                <button className='click'>Click here</button>
+              </div>
+            ))}
+  
+          {constructionLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
+        </div>
+        )}
+
+{activeField === 'Electrical' && (
+          <div
+          className='grid-container'
+          id='electrical'
+          onScroll={handleScroll2}// Scrollable container
+        >
+          {electricalItems
+            .filter((item) =>
+              item.name_of_work.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((item, index) => (
+              <div key={index} className='card' onClick={() => navigate(`/details/${item.name_of_work}`)}>
+                <img
+                  className='container-image'
+                  src={item.image}
+                  alt={`container${index + 1}`}
+                />
+                <h2>{item.name_of_work}</h2>
+                <button className='click'>Click here</button>
+              </div>
+            ))}
+  
+          {electricalLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
+        </div>
+        )}
 
 
-      <h2 className='work-category-heading'>Mechanical works</h2>
-      <p>Below are the main categories of Mechanical works. Click on any category to access related information. </p>
-      <div
-        className='grid-container'
-        id='mechanical'
-        onScroll={handleScroll3}
-        style={{ height: '400px', overflowY: 'scroll' }} // Scrollable container
-      >
-        {mechanicalItems
-          .filter((item) =>
-            item.name_of_work.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((item, index) => (
-            <div key={index} className='card' onClick={() => navigate(`/details/${item.name_of_work}`)}>
-              <img
-                className='container-image'
-                src={item.image}
-                alt={`container${index + 1}`}
-              />
-              <h2 className='category-heading' >{item.name_of_work}</h2>
-              <button className='click'>Click here</button>
-            </div>
-          ))}
+        {activeField === 'Mechanical' && (
+          <div
+          className='grid-container'
+          id='mechanical'
+          onScroll={handleScroll2}
+          // Scrollable container
+        >
+          {mechanicalItems
+            .filter((item) =>
+              item.name_of_work.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((item, index) => (
+              <div key={index} className='card' onClick={() => navigate(`/details/${item.name_of_work}`)}>
+                <img
+                  className='container-image'
+                  src={item.image}
+                  alt={`container${index + 1}`}
+                />
+                <h2>{item.name_of_work}</h2>
+                <button className='click'>Click here</button>
+              </div>
+            ))}
+  
+          {mechanicalLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
+        </div>
+        )}
+        
 
-        {mechanicalLoading && <div className ='loading-div' >  <Mosaic className='' color="#ff815d" size="large" text="Loading...." textColor="#e3a67d" /> </div>}
-      </div>
+        <p className='page-description'><span className='note'>Note:</span> The Construction Guide serves as a comprehensive resource for all major works including Construction, Electrical, and Mechanical works. It provides organized and detailed information for comprehensive project planning and execution.</p>
+
     </div>
   );
 }
