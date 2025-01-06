@@ -16,7 +16,7 @@ function DetailsPage() {
     const navigate = useNavigate();
 
   useEffect(() => {
-    const baseURL =  'https://ssv-construction-guide-backend.onrender.com';
+    const baseURL =  'https://gpvmittasks-bzhh.onrender.com';
     // Fetch category data
     axios
       .get(`${baseURL}/details/${name_of_work}`)
