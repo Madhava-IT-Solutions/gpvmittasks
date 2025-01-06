@@ -30,7 +30,7 @@ const dbConfig = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   port: 3306, 
-  connectTimeout: 5000// Change the port to 3306
+  connectTimeout: 60000
 };
 
 (async () => {
@@ -84,7 +84,7 @@ app.get('/details/:name_of_work?', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   const environment = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
   console.log(`Server running on ${environment}`);
