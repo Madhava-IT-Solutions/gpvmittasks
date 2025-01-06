@@ -396,6 +396,7 @@ span{
   }
   .heading-box{
     width: 100%;
+    text-align: center;
   }
   .grid-container{
     height:50%;
