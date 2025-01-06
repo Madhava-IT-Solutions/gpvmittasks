@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
-const allowedOrigins = ['https://ssv-construction-tips-frontend.onrender.com',  ]; // Replace with the actual URL of your frontend
+const allowedOrigins = ['https://ssv-construction-tips-frontend.onrender.com', 'https://construction-guidelines.onrender.com' ]; // Replace with the actual URL of your frontend
 
 const corsOptions = {
   origin: function (origin, callback) {
