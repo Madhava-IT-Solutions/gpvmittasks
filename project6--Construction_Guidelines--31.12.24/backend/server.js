@@ -9,12 +9,12 @@ app.use(express.json());
 
 // MySQL Configuration
 const dbConfig = {
-  host: process.env.DB_SERVER, // Replace 'server' with 'host'
+  host: process.env.DB_SERVER, // Render-provided or your custom database host
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: 3306, 
-  connectTimeout: 10000// Change the port to 3306
+  port: process.env.DB_PORT || 3306, // Render database often uses custom ports
+  connectTimeout: 10000,
 };
 
 // Validate environment variables
@@ -23,9 +23,10 @@ if (!dbConfig.host || !dbConfig.user || !dbConfig.password || !dbConfig.database
   process.exit(1);
 }
 
+// Route to fetch details
 app.get('/details/:name_of_work?', async (req, res) => {
   const { name_of_work } = req.params;
-  console.log(name_of_work)
+  console.log('Fetching details for:', name_of_work || 'All works');
 
   let connection;
   try {
@@ -44,15 +45,27 @@ app.get('/details/:name_of_work?', async (req, res) => {
     const [rows] = await connection.execute(query, values);
     res.json(rows);
   } catch (err) {
-    console.error('Database error:', err);
-    res.status(500).send('Internal Server Error');
+    console.error('Database error:', {
+      code: err.code,
+      message: err.message,
+      stack: err.stack,
+    });
+    res.status(500).json({
+      error: 'Failed to fetch data from the database',
+      details: err.message,
+    });
   } finally {
     if (connection) {
-      await connection.end(); // Close the connection
+      try {
+        await connection.end(); // Close the connection
+      } catch (closeErr) {
+        console.error('Error closing database connection:', closeErr.message);
+      }
     }
   }
 });
 
+// Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   const environment = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
