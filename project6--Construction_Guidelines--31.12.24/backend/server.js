@@ -4,18 +4,49 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = ['https://ssv-construction-tips-frontend.onrender.com',  ]; // Replace with the actual URL of your frontend
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      // Allow requests from the allowed domains
+      callback(null, true);
+    } else {
+      // Reject requests from other domains
+      callback(new Error('Not allowed by CORS'), false);
+    }
+  },
+};
+
+app.use(cors(corsOptions)); // Use the CORS options
+
 app.use(express.json());
 
 // MySQL Configuration
 const dbConfig = {
-  host: process.env.DB_SERVER, // Render-provided or your custom database host
+  host: process.env.DB_SERVER, // Replace 'server' with 'host'
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306, // Render database often uses custom ports
-  connectTimeout: 10000,
+  port: 3306, 
+  connectTimeout: 5000// Change the port to 3306
 };
+
+(async () => {
+  let connection;
+  try {
+    connection = await mysql.createConnection(dbConfig);
+    console.log('✅ Connected to the database successfully.');
+    await connection.query('SELECT 1'); // Test query
+  } catch (err) {
+    console.error('❌ Database connection failed:', err.message);
+    process.exit(1); // Exit if the connection fails
+  } finally {
+    if (connection) await connection.end();
+  }
+})();
+
 
 // Validate environment variables
 if (!dbConfig.host || !dbConfig.user || !dbConfig.password || !dbConfig.database) {
@@ -23,10 +54,9 @@ if (!dbConfig.host || !dbConfig.user || !dbConfig.password || !dbConfig.database
   process.exit(1);
 }
 
-// Route to fetch details
 app.get('/details/:name_of_work?', async (req, res) => {
   const { name_of_work } = req.params;
-  console.log('Fetching details for:', name_of_work || 'All works');
+  console.log(name_of_work)
 
   let connection;
   try {
@@ -45,29 +75,19 @@ app.get('/details/:name_of_work?', async (req, res) => {
     const [rows] = await connection.execute(query, values);
     res.json(rows);
   } catch (err) {
-    console.error('Database error:', {
-      code: err.code,
-      message: err.message,
-      stack: err.stack,
-    });
-    res.status(500).json({
-      error: 'Failed to fetch data from the database',
-      details: err.message,
-    });
+    console.error('Database error:', err);
+    res.status(500).send('Internal Server Error');
   } finally {
     if (connection) {
-      try {
-        await connection.end(); // Close the connection
-      } catch (closeErr) {
-        console.error('Error closing database connection:', closeErr.message);
-      }
+      await connection.end(); // Close the connection
     }
   }
 });
 
-// Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   const environment = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
   console.log(`Server running on ${environment}`);
 });
+
+app.get('/health', (req, res) => res.send('Backend is running!'));
