@@ -16,7 +16,7 @@ function DetailsPage() {
     const navigate = useNavigate();
 
   useEffect(() => {
-    const baseURL =  'http://localhost:5000';
+    const baseURL =  'https://gpvmittasks-bzhh.onrender.com';
     // Fetch category data
     axios
       .get(`${baseURL}/details/${name_of_work}`)

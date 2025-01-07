@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
-const allowedOrigins = ['https://construction-guidelines.onrender.com' ]; // Replace with the actual URL of your frontend
+const allowedOrigins = ['https://construction-guidelines.onrender.com','http://localhost:5174' ]; // Replace with the actual URL of your frontend
 
 const corsOptions = {
   origin: function (origin, callback) {

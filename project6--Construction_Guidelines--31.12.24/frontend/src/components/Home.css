@@ -7,7 +7,9 @@
     width: 100%;
     overflow: scroll;
     overflow-x: hidden;
+    height: 100%;
 }
+
 .heading-box{
   width: 60vw;
   text-align: right;
