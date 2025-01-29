@@ -380,7 +380,6 @@
 
 
 
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -394,6 +393,11 @@ const Login = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
   const loadTenders = async () => {
     try {
@@ -438,6 +442,27 @@ const Login = () => {
       window.location.href = '/dashboard';
     } catch (err) {
       alert('Invalid credentials');
+    }
+  };
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmitcontact = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("https://tenders-server.onrender.com/login/api/send", formData);
+      alert(response.data.message);
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+    });
+    
+    } catch (error) {
+      alert("Error sending message. Try again later.");
     }
   };
 
@@ -511,7 +536,7 @@ const Login = () => {
                   <div className="links">
                     <a href="#" className="forgot-password"> Forgot Password?</a>
                     <span> | </span>
-                    <a href="#business-ideas" className="register">New user? Register here</a>
+                    <a href="#business-ideas" className="register">New user? ple Register here</a>
                   </div>
                </form>
            </div>
@@ -526,7 +551,7 @@ const Login = () => {
                           
                             <div   >
                                   <table>
-                                  <marquee direction="up" scrolldelay="30" onmouseover="this.stop();" onmouseout="this.start();">
+                                
                                         <thead >
                                           <tr  className=' thead '>
                                             <th>Tender ID</th>
@@ -539,7 +564,7 @@ const Login = () => {
                                             
                                           </tr>
                                         </thead>
-                                       
+                                        <marquee direction="up" scrolldelay="30" onmouseover="this.stop();" onmouseout="this.start();">
                                             <tbody  >
                                               {displayTenders.map((tender) => (
 
@@ -672,18 +697,18 @@ const Login = () => {
          <section id="contact" className="contact">
            <div className="container">
              <h2 className='process'>Contact Us</h2>
-             <form>
+             <form onSubmit={handleSubmitcontact}>
                <div className="form-group">
                  <label htmlFor="name">Name</label>
-                 <input className='cont' type="text" id="name" placeholder="Your Name" />
+                 <input name="name" className='cont' value={formData.name} onChange={handleChange}  type="text" id="name" placeholder="Your Name" />
                </div>
                <div className="form-group">
                  <label htmlFor="email">Email</label>
-                 <input className='cont' type="email" id="email" placeholder="Your Email" />
+                 <input name="email" className='cont' value={formData.email} onChange={handleChange}  type="email" id="email" placeholder="Your Email" />
                </div>
                <div className="form-group">
                  <label htmlFor="message">Message</label>
-                 <textarea className='tex' id="message" placeholder="Your Message"></textarea>
+                 <textarea className='tex' id="message" value={formData.message} onChange={handleChange} placeholder="Your Message"></textarea>
                </div>
                <button type="submit" className="btn">Submit</button>
              </form>
@@ -710,6 +735,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-

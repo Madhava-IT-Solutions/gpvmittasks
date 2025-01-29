@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const mysql = require("mysql2/promise");
 const dotenv = require("dotenv").config();
+const nodemailer = require("nodemailer");
+
 
 const router = express.Router();
 
@@ -119,6 +121,7 @@ router.post('/api/send', async (req, res) => {
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: 'Thanks for Contacting us!' });
   } catch (error) {
+    console.log(error)
       res.status(500).json({ message: 'Error sending email', error });
   }
 });
