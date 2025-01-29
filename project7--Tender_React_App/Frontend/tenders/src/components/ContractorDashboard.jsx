@@ -74,7 +74,7 @@ const ContractorDashboard = () => {
 
   const loadContractors = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/home/api/contractors`);
+      const { data } = await axios.get(`https://tenders-server.onrender.com/home/api/contractors`);
       console.log(data);
       setContractors(data); // Update state with contractor data
     } catch (error) {
@@ -85,7 +85,7 @@ const ContractorDashboard = () => {
   
   const loadApplications = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/home/api/Contractor-applications/${userDetails.id}`);
+      const { data } = await axios.get(`https://tenders-server.onrender.com/home/api/Contractor-applications/${userDetails.id}`);
       const applications = data
 
       setApplications(applications)
@@ -96,7 +96,7 @@ const ContractorDashboard = () => {
 
   const loadTenders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3001/home/api/tenders");
+      const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
       const currentDate = new Date().toISOString().split("T")[0];
       const activeTenders = data.filter((tender) => tender.tender_response_by > currentDate);
       const archivedTenders = data.filter((tender) => tender.tender_response_by <= currentDate);

@@ -74,7 +74,7 @@ const HomePage = () => {
     });
 
     try {
-      await axios.post("http://localhost:3001/dashboard/api/submit", formData);
+      await axios.post("https://tenders-server.onrender.com/dashboard/api/submit", formData);
       alert("Tender submitted successfully!");
       setForm({
         name_of_work: "",
@@ -97,7 +97,7 @@ const HomePage = () => {
 
   const loadTenders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3001/dashboard/api/tenders");
+      const { data } = await axios.get("https://tenders-server.onrender.com/dashboard/api/tenders");
       const currentDate = new Date().toISOString().split("T")[0];
       const activeTenders = data.filter((tender) => tender.tender_response_by > currentDate);
       const archivedTenders = data.filter((tender) => tender.tender_response_by <= currentDate);

@@ -60,7 +60,7 @@ const ClientDashboard = () => {
   useEffect(() => {
     const loadTenders = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/home/api/tenders");
+        const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
         setTenders(data);
         setDisplayTenders(data);
       } catch (error) {
@@ -143,7 +143,7 @@ const ClientDashboard = () => {
     
     console.log(formData)
     try {
-      const res = await axios.post('http://localhost:3001/home/api/submit', formData, {
+      const res = await axios.post('https://tenders-server.onrender.com/home/api/submit', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
@@ -180,7 +180,7 @@ const ClientDashboard = () => {
 
   const loadContractors = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/home/api/contractors`);
+      const { data } = await axios.get(`https://tenders-server.onrender.com/home/api/contractors`);
       setContractors(data); // Update state with contractor data
     } catch (error) {
       console.error("Failed to load contractors:", error);
@@ -190,7 +190,7 @@ const ClientDashboard = () => {
   
   const loadApplications = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/home/api/applications/${userDetails.id}`);
+      const { data } = await axios.get(`https://tenders-server.onrender.com/home/api/applications/${userDetails.id}`);
       const applications = data
 
       setApplications(applications)
@@ -201,7 +201,7 @@ const ClientDashboard = () => {
   
   const loadTenders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3001/home/api/tenders");
+      const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
       const currentDate = new Date().toISOString().split("T")[0];
       const activeTenders = data.filter((tender) => tender.tender_response_by > currentDate);
       const archivedTenders = data.filter((tender) => tender.tender_response_by <= currentDate);
