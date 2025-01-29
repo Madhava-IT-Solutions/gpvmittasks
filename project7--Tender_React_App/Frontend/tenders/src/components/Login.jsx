@@ -397,7 +397,7 @@ const Login = () => {
 
   const loadTenders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3001/home/api/tenders");
+      const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
       const currentDate = new Date().toISOString().split("T")[0];
       const activeTenders = data.filter((tender) => tender.tender_response_by > currentDate);
       const archivedTenders = data.filter((tender) => tender.tender_response_by <= currentDate);
@@ -432,7 +432,7 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/login/api/login', { username, password });
+      const res = await axios.post('https://tenders-server.onrender.com/login/api/login', { username, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userDetails',JSON.stringify(res.data.userProfile))
       window.location.href = '/dashboard';

@@ -94,4 +94,33 @@ router.post("/api/login", async (req, res) => {
   }
 });
 
+router.post('/api/send', async (req, res) => {
+  const { name, email, message } = req.body;
+
+  console.log(name,email,message)
+
+  // Set up Nodemailer transport
+  let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+          user: process.env.EMAIL_USER, // Your Gmail address
+          pass: process.env.EMAIL_PASS // Your Gmail App Password
+      }
+  });
+
+  let mailOptions = {
+      from: process.env.EMAIL_USER,
+      to:  email,// Your email to receive messages
+      subject: `New Contact Form Submission from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+  };
+
+  try {
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ message: 'Thanks for Contacting us!' });
+  } catch (error) {
+      res.status(500).json({ message: 'Error sending email', error });
+  }
+});
+
 module.exports = router;
