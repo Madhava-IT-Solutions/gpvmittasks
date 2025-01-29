@@ -98,9 +98,6 @@ router.post("/api/login", async (req, res) => {
 
 router.post('/api/send', async (req, res) => {
   const { name, email, message } = req.body;
-
-  console.log(name,email,message)
-
   // Set up Nodemailer transport
   let transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -112,7 +109,7 @@ router.post('/api/send', async (req, res) => {
 
   let mailOptions = {
       from: process.env.EMAIL_USER,
-      to:  email,// Your email to receive messages
+      to:  email, // Your email to receive messages
       subject: `New Contact Form Submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
   };
