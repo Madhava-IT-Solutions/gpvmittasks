@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import "./Dashboard.css"
 import "./ClientDashboard.css"
-import "./HomePage.css";
+import "./Homepage.css";
 
 
 import '../App.css';
