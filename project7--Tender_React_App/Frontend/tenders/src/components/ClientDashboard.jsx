@@ -6,7 +6,6 @@ import Select from "react-select";
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import ProfileCard from "./ProfileCard";
 import "./Dashboard.css"
 import "./ClientDashboard.css"
 import "./HomePage.css";
