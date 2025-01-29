@@ -89,7 +89,6 @@ async function registerUser(user, role, res, extraData, tableName) {
     const userQuery = `INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)`;
     const roleQuery = `INSERT INTO ${tableName} (user_id, ${Object.keys(extraData).join(", ")}) VALUES (?, ${Object.values(extraData).map(() => "?").join(", ")})`;
 
-    console.log(Object.keys(extraData) ,Object.values(extraData))
 
     const connection = await pool.getConnection();
     const [userResult] = await connection.query(userQuery, [username, email, hashedPassword, role]);
