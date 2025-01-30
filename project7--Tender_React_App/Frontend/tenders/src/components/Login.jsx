@@ -470,17 +470,17 @@ const Login = () => {
 
   const handleClient = async (event) =>{
     event.preventDefault();
-    navigate('#/ClientRegistration')
+    navigate('/ClientRegistration')
   }
   
   const handleContractor = async (event) =>{
     event.preventDefault();
-    navigate('#/ContractorRegistration')
+    navigate('/ContractorRegistration')
   }
   
   const handleVendor = async (event) =>{
     event.preventDefault();
-    navigate('#/VendorRegistration')
+    navigate('/VendorRegistration')
   }
 
   return (

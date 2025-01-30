@@ -24,7 +24,7 @@ const ClientDashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token'); // Remove JWT token from localStorage
-    navigate('#/login'); // Redirect to login page
+    navigate('/login'); // Redirect to login page
   };
 
   const [states, setStates] = useState([]);
@@ -232,11 +232,11 @@ const ClientDashboard = () => {
   };
 
   const handleApply = (tenderId) => {
-    navigate(`#/apply/${tenderId}`);
+    navigate(`/apply/${tenderId}`);
   };
 
   const handleArchiveClick = () => {
-    navigate("#/archive");}
+    navigate("/archive");}
 
 
     const ClientProfile = () => {
