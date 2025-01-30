@@ -392,6 +392,8 @@ const Login = () => {
   const [tenders, setTenders] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [activeTenders,setactiveTenders] =useState([]);
+  const [archivedTenders, setArchive] = useState([]);
   const itemsPerPage = 15;
   const [formData, setFormData] = useState({
     name: "",
