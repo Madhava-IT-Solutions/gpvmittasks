@@ -1,29 +1,28 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import ApplyPage from "./components/ApplyPage";
 import ArchivePage from "./components/ArchivePage";
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import ProtectedRoute from './components/ProtectedRoute';
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 import ClientRegistration from "./components/ClientRegistration";
 import ContractorRegistration from "./components/ContractorRegistration";
 import VendorRegistration from "./components/VendorRegistration";
 
 function App() {
-
   return (
     <Router>
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        
+
         {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute allowedRoles={['client', 'contractor', 'vendor']}>
+            <ProtectedRoute allowedRoles={["client", "contractor", "vendor"]}>
               <Dashboard />
             </ProtectedRoute>
           }
@@ -31,13 +30,11 @@ function App() {
         <Route
           path="/apply/:tenderid"
           element={
-            <ProtectedRoute allowedRoles={['client', 'contractor', 'vendor']}>
+            <ProtectedRoute allowedRoles={["client", "contractor", "vendor"]}>
               <ApplyPage />
             </ProtectedRoute>
           }
         />
-        <Route path="/dashboard" element= {<Dashboard/>} />
-        
         <Route path="/archive" element={<ArchivePage />} />
         <Route path="/client-registration" element={<ClientRegistration />} />
         <Route path="/contractor-registration" element={<ContractorRegistration />} />
@@ -51,4 +48,3 @@ function App() {
 }
 
 export default App;
-

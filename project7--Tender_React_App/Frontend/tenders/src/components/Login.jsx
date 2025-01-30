@@ -379,10 +379,9 @@
 
 
 
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -431,7 +430,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      navigate('#/dashboard');
+      navigate('/dashboard');
     }
   }, [navigate]);
 
@@ -470,17 +469,17 @@ const Login = () => {
 
   const handleClient = async (event) =>{
     event.preventDefault();
-    navigate('/ClientRegistration')
+    navigate('/client-registration')
   }
   
   const handleContractor = async (event) =>{
     event.preventDefault();
-    navigate('/ContractorRegistration')
+    navigate('/contractor-registration')
   }
   
   const handleVendor = async (event) =>{
     event.preventDefault();
-    navigate('/VendorRegistration')
+    navigate('/vendor-registration')
   }
 
   return (
@@ -491,11 +490,11 @@ const Login = () => {
               <a href='https://ssvconstructions.in/' target='blank'><img src='https://ssvconstructions.in/wp-content/uploads/2024/05/cropped-ssv-final-logo-transparent-png-186x86.png' className='imag' /></a>
                <h1 className="logo headings">Tenders</h1>
                <ul className="nav-links">
-                 <li><a href="#business-ideas">Registration</a></li>
-                 <li><a href="#tender-details">Tender Details</a></li>
-                 <li><a href='#tenders_table'>Active Tenders</a></li>
-                 <li><a href="#contact">Contact</a></li>
-               </ul>
+                  <li><a href="#registrations">Registration</a></li>
+                  <li><a href="#tender-details">Tender Details</a></li>
+                  <li><a href="#tenders_table">Active Tenders</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
            </nav>
          </header>
          
@@ -538,7 +537,7 @@ const Login = () => {
                   <div className="links">
                     <a href="#" className="forgot-password"> Forgot Password?</a>
                     <span> | </span>
-                    <a href="#business-ideas" className="register">New user? ple Register here</a>
+                    <a href="#registrations" className="register">New user? ple Register here</a>
                   </div>
                </form>
            </div>
@@ -549,9 +548,8 @@ const Login = () => {
                         <h2 className='lpara'>Active Tenders</h2>
                       
                       
-                          <div  >
-                          
-                            <div   >
+                          <div>
+                             <div >
                                   <table>
                                 
                                         <thead >
@@ -601,7 +599,7 @@ const Login = () => {
         </section>
    
    
-         <section id="business-ideas" className="business-ideas">
+         <section id="registrations" className="business-ideas">
            <div className="container">
              <h2 className='process'>Registration Process</h2>
              <p className='para'>Register here as Client to upload Tenders && Register as Contractor,Vendor to Apply Tenders</p>
