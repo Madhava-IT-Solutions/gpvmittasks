@@ -431,7 +431,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      navigate('/dashboard');
+      navigate('#/dashboard');
     }
   }, [navigate]);
 
@@ -441,7 +441,7 @@ const Login = () => {
       const res = await axios.post('https://tenders-server.onrender.com/login/api/login', { username, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userDetails',JSON.stringify(res.data.userProfile))
-      window.location.href = '/dashboard';
+      window.location.href = '#/dashboard';
     } catch (err) {
       alert('Invalid credentials');
     }
@@ -470,17 +470,17 @@ const Login = () => {
 
   const handleClient = async (event) =>{
     event.preventDefault();
-    navigate('/ClientRegistration')
+    navigate('#/ClientRegistration')
   }
   
   const handleContractor = async (event) =>{
     event.preventDefault();
-    navigate('/ContractorRegistration')
+    navigate('#/ContractorRegistration')
   }
   
   const handleVendor = async (event) =>{
     event.preventDefault();
-    navigate('/VendorRegistration')
+    navigate('#/VendorRegistration')
   }
 
   return (

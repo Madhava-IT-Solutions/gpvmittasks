@@ -14,7 +14,7 @@ const Dashboard = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      navigate("/login"); // Redirect if no token is found
+      navigate("#/login"); // Redirect if no token is found
       return;
     }
 
@@ -24,7 +24,7 @@ const Dashboard = () => {
     } catch (error) {
       console.error("Invalid token:", error);
       localStorage.removeItem("token"); // Remove corrupt token
-      navigate("/login");
+      navigate("#/login");
     }
   }, [navigate]); // Run only when navigating
 

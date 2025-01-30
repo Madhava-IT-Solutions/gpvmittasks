@@ -52,7 +52,7 @@ const ContractorDashboard = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('token'); // Remove JWT token from localStorage
-    navigate('/login'); // Redirect to login page
+    navigate('#/login'); // Redirect to login page
   };
 
   const [activeTenders,setactiveTenders] = useState([])
@@ -127,11 +127,11 @@ const ContractorDashboard = () => {
   };
 
   const handleApply = (tenderId) => {
-    navigate(`/apply/${tenderId}`);
+    navigate(`#/apply/${tenderId}`);
   };
 
   const handleArchiveClick = () => {
-    navigate("/archive");}
+    navigate("#/archive");}
 
 
     

@@ -125,11 +125,11 @@ const HomePage = () => {
     }
   };
   const handleApply = (tenderId) => {
-    navigate(`/apply/${tenderId}`);
+    navigate(`#/apply/${tenderId}`);
   };
 
   const handleArchiveClick = () => {
-    navigate("/archive");
+    navigate("#/archive");
   };
 
 

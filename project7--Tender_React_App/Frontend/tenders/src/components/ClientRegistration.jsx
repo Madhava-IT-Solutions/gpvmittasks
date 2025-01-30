@@ -63,7 +63,7 @@ const ClientRegistration = () => {
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
       alert(response.data.message);
-      navigate('/success');
+      navigate('#/success');
     } catch (err) {
       console.error('Error:', err);
       alert(err.response?.data?.error || 'Registration failed.');
