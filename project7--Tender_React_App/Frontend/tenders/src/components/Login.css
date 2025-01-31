@@ -21,7 +21,11 @@
   padding-left: 10%;
   padding-right:10%;
   width: 80%;
+  position: sticky;
+  top: 0px;
+
 }
+
 .home {
   text-align: center;
   width: 100%;
@@ -323,9 +327,6 @@ background-color: white;
 min-height: 100vh;
 background-image: url("https://cdn.pixabay.com/photo/2016/08/05/07/17/laptop-1571702_1280.jpg");
 background-size: cover;
-
-
-
 }
 
 
@@ -718,3 +719,11 @@ text-align: center;
     height: 80px;
   }
 }
+
+
+
+
+
+
+
+

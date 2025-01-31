@@ -50,8 +50,8 @@ const ArchivePage = () => {
         </thead>
         <tbody>
           {archive.map((tender) => (
-            <tr key={tender.id}>
-              <td>{tender.id}</td>
+            <tr key={tender.tender_id}>
+              <td>{tender.tender_id}</td>
               <td>{tender.name_of_work}</td>
               <td>{tender.state}</td>
               <td>{tender.nature_of_work}</td>

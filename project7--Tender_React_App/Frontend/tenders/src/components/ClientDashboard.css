@@ -68,17 +68,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* new table styling */
 
 
@@ -305,7 +294,62 @@
   }
 
 
-  .my_tenders{
-    background-color: #ff0004;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .all-tenders-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh;
+    margin-bottom: 10vh;
   }
-  
+  .all-tenders-container h2{
+    font-size: 35px;
+    margin-bottom: 5vh;
+    font-weight: 900;
+  }
+  .table-bar{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  .filter-buttons{
+    width: 40%;
+  }
+  .filter-buttons button{
+    margin-right: 10px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #1b8feeb9;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+  }
+  .filter-buttons button:hover{
+    scale: 1.1;
+    transition: 0.3s;
+    background-color: #0056b3;
+  }

@@ -208,17 +208,17 @@ router.get('/api/tenders', async (req, res) => {
 
 
 
-router.get('/api/applications/:client_id', async (req, res) => {
+router.get('/api/applications/:user_id', async (req, res) => {
   try {
     const connection = await pool.getConnection();
-    const { client_id } = req.params;
+    const { user_id } = req.params;
 
-    // Updated SQL query to include contractor name from applications table
+    // Updated SQL query to select applications based on user_id
     const query = `
       SELECT 
         a.id AS application_id,
         a.tender_id,
-        a.user_id AS user_id, -- Renamed to user_id
+        a.user_id AS user_id,  -- Renamed to user_id
         a.name AS applicant_name,  -- Added name from applications table
         a.submitted_on,
         a.bid_amount,
@@ -230,19 +230,61 @@ router.get('/api/applications/:client_id', async (req, res) => {
         applications a
       JOIN 
         tenders t ON a.tender_id = t.id
-      JOIN 
-        users u ON a.user_id = u.id -- Updated from 'contractors' to 'users'
       WHERE 
-        t.client_id = ?;  -- Filter tenders by client_id
+        a.user_id = ?;  -- Filter applications by user_id
     `;
 
-    const [rows] = await connection.query(query, [client_id]);
+    const [rows] = await connection.query(query, [user_id]);
     connection.release();
+    console.log(rows , user_id)
+    res.json(rows);
+    
+
+  } catch (err) {
+    console.error('Error retrieving applications for user:', err);
+    res.status(500).send('Error retrieving applications for user');
+  }
+});
+
+
+router.get('/api/mytenders/:user_id', async (req, res) => {
+  try {
+    const connection = await pool.getConnection();
+    const { user_id } = req.params;
+
+    // SQL query to select tenders based on user_id (assuming client_id is the user_id in tenders table)
+    const query = `
+      SELECT 
+        t.id AS tender_id,
+        t.name_of_work,
+        t.area,
+        t.plinth_area,
+        t.state,
+        t.district,
+        t.nature_of_work,
+        t.tender_published_on,
+        t.tender_response_by,
+        t.client_id,
+        t.status AS tender_status,
+        COUNT(a.id) AS total_applications  -- Optional: Count of applications for each tender
+      FROM 
+        tenders t
+      LEFT JOIN 
+        applications a ON t.id = a.tender_id  -- Join with applications table
+      WHERE 
+        t.client_id = ?  -- Filter tenders by client_id (user_id)
+      GROUP BY 
+        t.id;  -- Group by tender to get accurate application counts
+    `;
+
+    const [rows] = await connection.query(query, [user_id]);
+    connection.release();
+
     res.json(rows);
 
   } catch (err) {
-    console.error('Error retrieving applications with tender and contractor details:', err);
-    res.status(500).send('Error retrieving applications with tender and contractor details');
+    console.error('Error retrieving tenders for user:', err);
+    res.status(500).send('Error retrieving tenders for user');
   }
 });
 

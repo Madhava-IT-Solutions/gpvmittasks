@@ -75,7 +75,7 @@ router.post("/api/login", async (req, res) => {
         token,
         userProfile: {
           id: user.id,
-          image:"https://avatar.iran.liara.run/public/boy?username=Ash",
+          image:"https://cdn-icons-png.flaticon.com/128/236/236832.png",
           username: user.username,
           email: user.email,
           created_at : user.created_at,
