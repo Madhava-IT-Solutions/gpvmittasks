@@ -102,7 +102,7 @@ const ClientDashboard = () => {
   const loadApplications = async (userId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/home/api/applications/${userId}`
+        `https://tenders-server.onrender.com/home/api/applications/${userId}`
       );
       setApplications(data);
     } catch (error) {
@@ -113,7 +113,7 @@ const ClientDashboard = () => {
   const loadMyTenders = async (userId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/home/api/mytenders/${userId}`
+        `https://tenders-server.onrender.com/home/api/mytenders/${userId}`
       );
       setMyTenders(data);
     } catch (error) {
@@ -150,7 +150,7 @@ const ClientDashboard = () => {
 
   const loadTenders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3001/home/api/tenders");
+      const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
       setTenders(data);
       setDisplayTenders(data);
     } catch (error) {

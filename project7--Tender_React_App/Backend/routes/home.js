@@ -209,7 +209,6 @@ router.get('/api/tenders', async (req, res) => {
 
 
 router.get('/api/applications/:user_id', async (req, res) => {
-  console.log(req.params)
   try {
     const connection = await pool.getConnection();
     const { user_id } = req.params;
@@ -232,12 +231,11 @@ router.get('/api/applications/:user_id', async (req, res) => {
       JOIN 
         tenders t ON a.tender_id = t.id
       WHERE  
-        a.client_id = ? ;  -- Filter applications by user_id
+        t.user_id = ? ;  -- Filter applications by user_id
     `;
 
     const [rows] = await connection.query(query, [user_id]);
     connection.release();
-    console.log(rows , user_id)
     res.json(rows);
 
   } catch (err) {
