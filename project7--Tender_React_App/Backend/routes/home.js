@@ -173,7 +173,7 @@ router.get('/api/tenders', async (req, res) => {
       SELECT 
         t.id AS tender_id,
         t.tender_type,
-        t.client_id,
+        t.user_id,
         t.name_of_work,
         t.area,
         t.plinth_area,
@@ -193,7 +193,7 @@ router.get('/api/tenders', async (req, res) => {
       FROM 
         tenders t
       JOIN 
-        clients c ON t.client_id = c.user_id;
+        clients c ON t.user_id = c.user_id;
     `;
 
     const [rows] = await connection.query(query);
@@ -209,6 +209,7 @@ router.get('/api/tenders', async (req, res) => {
 
 
 router.get('/api/applications/:user_id', async (req, res) => {
+  console.log(req.params)
   try {
     const connection = await pool.getConnection();
     const { user_id } = req.params;
@@ -218,27 +219,26 @@ router.get('/api/applications/:user_id', async (req, res) => {
       SELECT 
         a.id AS application_id,
         a.tender_id,
-        a.user_id AS user_id,  -- Renamed to user_id
+        a.client_id AS user_id,  -- Renamed to user_id
         a.name AS applicant_name,  -- Added name from applications table
         a.submitted_on,
         a.bid_amount,
         a.status,
         t.name_of_work AS tender_name,
         t.budget AS tender_budget,
-        t.deadline AS tender_deadline
+        t.tender_response_by AS deadline
       FROM 
         applications a
       JOIN 
         tenders t ON a.tender_id = t.id
-      WHERE 
-        a.user_id = ?;  -- Filter applications by user_id
+      WHERE  
+        a.client_id = ? ;  -- Filter applications by user_id
     `;
 
     const [rows] = await connection.query(query, [user_id]);
     connection.release();
     console.log(rows , user_id)
     res.json(rows);
-    
 
   } catch (err) {
     console.error('Error retrieving applications for user:', err);
@@ -264,7 +264,7 @@ router.get('/api/mytenders/:user_id', async (req, res) => {
         t.nature_of_work,
         t.tender_published_on,
         t.tender_response_by,
-        t.client_id,
+        t.user_id,
         t.status AS tender_status,
         COUNT(a.id) AS total_applications  -- Optional: Count of applications for each tender
       FROM 
@@ -272,7 +272,7 @@ router.get('/api/mytenders/:user_id', async (req, res) => {
       LEFT JOIN 
         applications a ON t.id = a.tender_id  -- Join with applications table
       WHERE 
-        t.client_id = ?  -- Filter tenders by client_id (user_id)
+        t.user_id = ?  -- Filter tenders by client_id (user_id)
       GROUP BY 
         t.id;  -- Group by tender to get accurate application counts
     `;
@@ -316,6 +316,7 @@ router.get('/api/contractor-applications/:user_id', async (req, res) => {
     const [rows] = await connection.query(query, [user_id]);
     connection.release();
     res.json(rows);
+    console.log(rows)
 
   } catch (err) {
     console.error('Error retrieving applications with tender details:', err);

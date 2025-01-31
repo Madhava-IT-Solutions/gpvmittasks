@@ -102,7 +102,7 @@ const ClientDashboard = () => {
   const loadApplications = async (userId) => {
     try {
       const { data } = await axios.get(
-        `https://tenders-server.onrender.com/home/api/applications/${userId}`
+        `http://localhost:3001/home/api/applications/${userId}`
       );
       setApplications(data);
     } catch (error) {
@@ -113,7 +113,7 @@ const ClientDashboard = () => {
   const loadMyTenders = async (userId) => {
     try {
       const { data } = await axios.get(
-        `https://tenders-server.onrender.com/home/api/mytenders/${userId}`
+        `http://localhost:3001/home/api/mytenders/${userId}`
       );
       setMyTenders(data);
     } catch (error) {
@@ -150,14 +150,13 @@ const ClientDashboard = () => {
 
   const loadTenders = async () => {
     try {
-      const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
+      const { data } = await axios.get("http://localhost:3001/home/api/tenders");
       setTenders(data);
       setDisplayTenders(data);
     } catch (error) {
       console.error("Failed to load tenders:", error);
     }
   };
-
   // const loadApplications = async () => {
   //   try {
   //     const { data } = await axios.get(`https://tenders-server.onrender.com/home/api/applications/${userDetails.id}`);
@@ -226,7 +225,6 @@ const ClientDashboard = () => {
       alert('Failed to submit tender');
     }
   };
-  
 
   const filterTenders = (type) => {  
     setFilterType(type);
@@ -252,7 +250,7 @@ const ClientDashboard = () => {
 
 
 
-      // const loadTenders = async () => {
+  // const loadTenders = async () => {
   //   try {
   //     const { data } = await axios.get("https://tenders-server.onrender.com/home/api/tenders");
   //     const currentDate = new Date().toISOString().split("T")[0];
