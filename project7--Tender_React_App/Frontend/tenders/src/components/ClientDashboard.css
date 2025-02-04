@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    border: 1px solid red;
 }
 .top-body{
     display: flex;
@@ -16,6 +18,76 @@
 
 
 
+.profile-card {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+.profile-image {
+  margin-bottom: 20px;
+}
+.profile-image .image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4e73df;
+}
+.profile-info {
+  padding: 10px;
+}
+.username {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+.email {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+.about {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.social-icon {
+  font-size: 1.5em;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.social-icon:hover {
+  color: #4e73df;
+}
+
+/* Add responsiveness */
+@media screen and (max-width: 400px) {
+  .profile-card {
+    width: 80%;
+    padding: 15px;
+  }
+  .username {
+    font-size: 1.3em;
+  }
+  .email {
+    font-size: 1em;
+  }
+}
+.n-link{
+  color: bisque;
+  text-decoration: none;
+}
 .newTenderForm{
     width: 100%;
     height:90%;
@@ -28,8 +100,6 @@
     justify-content: space-around;
     align-self:flex-end;
 }
-
-
 
 
 .tendersCard{
@@ -67,42 +137,16 @@
   }
 
 
-
-/* new table styling */
-
-
-
-
-
-
-
-
-  /* Container Styling */
-.table-container {
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    overflow-x: auto; /* Enables horizontal scrolling on small screens */
-  }
-  
-  /* Heading */
-  h2 {
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  /* Table Styling */
-  .tender-table {
+  /* Table Styling  active tenders table*/
+  .active-tenders-table {
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
     min-width: 800px; /* Ensures table doesn’t shrink too much */
   }
-  
   /* Table Headers */
-  .tender-table th {
+  .active-tenders-table th {
     background-color: #007bff;
     color: white;
     text-transform: uppercase;
@@ -111,24 +155,20 @@
     position: sticky;
     top: 0;
   }
-  
   /* Table Data Cells */
-  .tender-table td {
+  .active-tenders-table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
   }
-  
   /* Alternate Row Colors */
-  .tender-table .even {
+  .active-tenders-table .even {
     background-color: #f9f9f9;
   }
-  
   /* Hover Effect */
-  .tender-table tr:hover {
+  .active-tenders-table tr:hover {
     background-color: #f1f1f1;
     transition: 0.3s;
   }
-  
   /* Download & Apply Buttons */
   .download-btn,
   .apply-btn {
@@ -139,178 +179,19 @@
     display: inline-block;
     text-align: center;
   }
-  
   .download-btn {
     background-color: #28a745;
     color: white;
   }
-  
   .download-btn:hover {
     background-color: #218838;
   }
-  
   .apply-btn {
     background-color: #ff9800;
     color: white;
     border: none;
     cursor: pointer;
   }
-  
-  .apply-btn:hover {
-    background-color: #e68900;
-  }
-  
-  /* 📌 Responsive Table for Small Screens */
-  @media screen and (max-width: 768px) {
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-    }
-  
-    .tender-table {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-  
-    /* Convert table into a block layout for better mobile UX */
-    .tender-table thead {
-      display: none; /* Hide table headers on small screens */
-    }
-  
-    .tender-table tr {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #ddd;
-      margin-bottom: 10px;
-      padding: 10px;
-      background: white;
-    }
-  
-    .tender-table td {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      font-size: 14px;
-      border: none;
-    }
-  
-    .tender-table td::before {
-      content: attr(data-label);
-      font-weight: bold;
-      color: #007bff;
-      flex: 1;
-    }
-  }
-  
-
-
-
-
-
-  .profile-card {
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .profile-image {
-    margin-bottom: 20px;
-  }
-  
-  .profile-image .image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #4e73df;
-  }
-  
-  .profile-info {
-    padding: 10px;
-  }
-  
-  .username {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .email {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 15px;
-  }
-  
-  .about {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-  
-  .social-media {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .social-icon {
-    font-size: 1.5em;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .social-icon:hover {
-    color: #4e73df;
-  }
-  
-  /* Add responsiveness */
-  @media screen and (max-width: 400px) {
-    .profile-card {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .username {
-      font-size: 1.3em;
-    }
-  
-    .email {
-      font-size: 1em;
-    }
-  }
-
-
-  .n-link{
-    color: bisque;
-    text-decoration: none;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   .all-tenders-container{
     display: flex;
@@ -334,11 +215,11 @@
   .filter-buttons{
     width: 40%;
   }
-  .filter-buttons button{
+  .filter-button{
     margin-right: 10px;
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: #1b8feeb9;
     color: white;
     border: none;
@@ -348,8 +229,200 @@
     font-size: 16px;
     
   }
-  .filter-buttons button:hover{
+  .filter-button:hover{
     scale: 1.1;
     transition: 0.3s;
-    background-color: #0056b3;
+    background-color: #177fef;
   }
+  .filter-button-active{
+    transition: 0.2s;
+    background-color: #0467d0;
+  }
+
+
+  
+
+
+  /* Responsive CSS for Mobile Devices */
+@media screen and (max-width: 768px) {
+
+  .top-body{
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.newTenderForm{
+  width: 80%;
+  height:90%;
+  margin-top: 5px ;
+  border: 1px solid rgb(128, 125, 125);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self:flex-end;
+}
+
+  /* Tenders Card */
+  .tendersCard {
+    width: 95%;
+    height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+  }
+
+  .tendersCard div h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    font-weight: 700;
+  }
+
+  /* Pagination */
+  .paginationCard {
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .paginationCard button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .paginationCard button:hover {
+    scale: 1.1;
+    background-color: #187eea;
+    transition: 0.3s;
+  }
+
+  /* Active Tenders Table */
+  .active-tenders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    min-width: unset;
+  }
+
+  .active-tenders-table th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .active-tenders-table td {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .active-tenders-table .even {
+    background-color: #f9f9f9;
+  }
+
+  .active-tenders-table tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+  }
+
+  /* Buttons */
+  .download-btn,
+  .apply-btn {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .download-btn {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .download-btn:hover {
+    background-color: #218838;
+  }
+
+  .apply-btn {
+    background-color: #ff9800;
+    color: white;
+  }
+
+  .apply-btn:hover {
+    background-color: #e68900;
+  }
+
+  /* All Tenders Container */
+  .all-tenders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+
+  .all-tenders-container h2 {
+    font-size: 28px;
+    margin-bottom: 3vh;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  /* Filter Buttons */
+  .table-bar {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 45%;
+    text-align: center;
+    background-color: #1b8feeb9;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .filter-button:hover {
+    scale: 1.05;
+    background-color: #177fef;
+    transition: 0.3s;
+  }
+
+  .filter-button-active {
+    background-color: #0467d0;
+  }
+}

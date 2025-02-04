@@ -1,0 +1,7 @@
+node dist/app.js: Starts the server in production mode, assuming you have compiled your code to JavaScript in the dist folder.
+
+tsc: Compiles your TypeScript code into JavaScript using the TypeScript compiler.
+
+nodemon --exec 'ts-node' src/app.ts: Uses nodemon with ts-node to run your TypeScript code directly without compiling it. This is convenient for rapid development.
+
+"format": "prettier --write ." : Run the script to format all files in the project

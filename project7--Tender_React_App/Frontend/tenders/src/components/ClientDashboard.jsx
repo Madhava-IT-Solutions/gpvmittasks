@@ -480,16 +480,16 @@ const ClientDashboard = () => {
               <h2>Active Tenders</h2>
               <div className="table-bar" >
               <div className="filter-buttons">
-                <button onClick={() => filterTenders("All")} className={`filter-button ${filterType === "All" ? "active" : ""}`}>All</button>
-                <button onClick={() => filterTenders("Construction")} className={`filter-button ${filterType === "Construction" ? "active" : ""}`}>Construction</button>
-                <button onClick={() => filterTenders("Material")} className={`filter-button ${filterType === "Material" ? "active" : ""}`}>Material</button>
+                <button onClick={() => filterTenders("All")} className={`filter-button ${filterType === "All" ? "filter-button-active" : ""} `}>All</button>
+                <button onClick={() => filterTenders("Construction")} className={`filter-button ${filterType === "Construction" ? "filter-button-active" : ""}`}>Construction</button>
+                <button onClick={() => filterTenders("Material")} className={`filter-button ${filterType === "Material" ? "filter-button-active" : ""}`}>Material</button>
               </div>
               <div>search</div>
               </div>
             
 
             {/* Tenders Table */}
-            <table className="tender-table">
+            <table className="active-tenders-table">
               <thead>
                 <tr>
                   <th>Tender ID</th>
@@ -640,7 +640,7 @@ const ClientDashboard = () => {
 
         {/* <div className="table-container">
             <h2>Active Tenders</h2>
-            <table className="tender-table">
+            <table className="active-tenders-table">
               <thead>
                 <tr>
                   <th>Tender ID</th>

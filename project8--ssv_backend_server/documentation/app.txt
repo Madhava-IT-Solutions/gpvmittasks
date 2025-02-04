@@ -1,0 +1,9 @@
+app.use(cors()) -  Cross-Origin Resource Sharing (CORS) allows requests from different origins (domains, protocols, ports) to access resources on your server. This is crucial for modern web applications that often involve interacting with APIs hosted on different domains.
+
+app.use(helmet()) - adds security headers to the HTTP responses sent by your server. provides several middleware functions that help protect your application from common web vulnerabilities like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), and clickjacking
+
+app.use(express.json()) - to parse incoming JSON data in request bodies. When a client sends a request with a Content-Type of application/json, this middleware will automatically parse the JSON data and make it accessible in the req.body object
+
+app.use(express.urlencoded({ extended: true })) - to parse incoming form data in request bodies. When a client sends a request with a Content-Type of application/x-www-form-urlencoded, this middleware will automatically parse the form data and make it accessible in the req.body object
+
+app.use(cookieParser()) - to parse cookies in the request headers. This middleware will automatically parse the Cookie header and make the cookie data accessible in the req.cookies object

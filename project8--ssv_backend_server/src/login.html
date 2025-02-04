@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        async function submitForm(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Get form values
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+            // Create data object
+            const data = { email, password };
+
+            try {
+                const response = await fetch("http://localhost:3000/api/users/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert("Login Successful! Welcome to SSV");
+
+                    // Hide login form & show welcome section
+                    document.getElementById("loginForm").style.display = "none";
+                    document.getElementById("welcomeSection").style.display = "block";
+
+                    // (Optional) Store login state
+                    localStorage.setItem("loggedIn", "true");
+                 
+                } else {
+                    alert(result.message || "Login failed");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Something went wrong!");
+            }
+        }
+
+        // Function to check if user is already logged in
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem("loggedIn");
+
+            if (isLoggedIn === "true") {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("welcomeSection").style.display = "block";
+            }
+        }
+
+        // Run on page load
+        window.onload = checkLoginStatus;
+    </script>
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="loginForm">
+        <form onsubmit="submitForm(event)">
+            <input type="email" id="email" placeholder="Email" required/>
+            <input type="password" id="password" placeholder="Password" required/>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Welcome Section (Hidden Initially) -->
+    <div id="welcomeSection" style="display: none;">
+        <h2>Welcome to SSV!</h2>
+        <p>You have successfully logged in.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("loggedIn"); // Clear login state
+            document.getElementById("welcomeSection").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        }
+    </script>
+</body>
+</html>

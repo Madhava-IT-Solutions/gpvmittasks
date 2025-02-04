@@ -1,0 +1,9 @@
+npm install -g ts-node - install ts-node as a global package
+
+ "start": "nodemon app.ts",
+    "dev": "nodemon --watch src --exec 'ts-node' src/app.ts",
+    "startprod": "node dist/app.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "dev": "ts-node src/app.ts"
